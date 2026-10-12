@@ -82,7 +82,7 @@ Log files, in-memory log size and join/leave logging. See [Admin Logs](../featur
 +OwnerIds=76561198000000000
 CommandPrefix=/
 bWhitelistEnabledByDefault=False
-RestartMode=ExitProcess
+RestartMode=RelaunchProcess
 RestartExitCode=0
 +MapAliases=(("arena", "/Game/Maps/Arena"))
 +ScheduledAnnouncements=(bEnabled=True,Message="Join our Discord!",IntervalSeconds=900,Type=Chat)

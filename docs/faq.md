@@ -42,8 +42,9 @@ Default Groups are only used the first time, when `Groups.json` doesn't exist. E
 
 ## Restart shuts the server down but it doesn't come back
 
-In **Exit Process** mode, Server Core exits and expects a supervisor to start the server again (systemd, Docker, a
-Windows service, your hosting panel). If you don't have one, set **Restart Mode** to **Reload Map**.
+**Restart Mode** is set to **Exit Process**, which exits and expects a supervisor to start the server again (systemd,
+Docker, a Windows service, your hosting panel). If you don't have one, use **Relaunch Process** (the default), which
+starts a new server process by itself.
 See [Restart modes](./docfiles/features/server-control#restart-modes).
 
 ## `/map` says the map was not found

@@ -59,12 +59,19 @@ in a packaged build**.
 
 ## Restart modes
 
-Unreal can't restart its own process, so **Restart Mode** decides what a restart does:
+**Restart Mode** decides what a restart does:
 
 | Mode | What happens | Use when |
 |---|---|---|
-| **Exit Process** (default) | Saves, kicks everyone and exits with **Restart Exit Code** | Your server runs under a supervisor that starts it again: systemd, Docker (`restart: always`), Windows services, a hosting panel |
-| **Reload Map** | Reloads the current map, the process keeps running | You have no supervisor, or only want a fresh map state |
+| **Relaunch Process** (default) | Saves, kicks everyone, starts a new server process with the same command line and exits. The new process waits until the old one is gone, so ports are free. | You start the server yourself, from a terminal, a script or a shortcut |
+| **Exit Process** | Saves, kicks everyone and exits with **Restart Exit Code** | Your server runs under a supervisor that starts it again: systemd, Docker (`restart: always`), Windows services, a hosting panel |
+| **Reload Map** | Reloads the current map, the process keeps running | You only want a fresh map state |
+
+:::note
+With **Relaunch Process** on Linux, the new server keeps printing its log to the same terminal, but it runs in the
+background, so typing commands into that terminal stops working after the first restart. If you want console input
+across restarts, run the server under a supervisor with **Exit Process**, inside `screen` or `tmux`.
+:::
 
 Example systemd unit:
 
