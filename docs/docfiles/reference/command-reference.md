@@ -6,7 +6,8 @@ title: Command Reference
 # Command Reference
 
 `<required>` and `[optional]` arguments. Commands and aliases are case insensitive. In chat, prefix commands with the
-**Command Prefix** (default `/`). In the server console, prefix them with `sc` or `ServerCore`.
+**Command Prefix** (default `/`). In the dedicated server console window, type them
+without a prefix. In the editor console, prefix them with `sc` or `ServerCore`.
 
 See [Targeting players](../features/server-commands#targeting-players) for what `<player>` accepts, and
 [Durations](../features/bans#durations) for `<duration>`.
@@ -80,7 +81,7 @@ See [Targeting players](../features/server-commands#targeting-players) for what 
 
 | Command | Aliases | Usage | Permission | Description |
 |---|---|---|---|---|
-| `map` | `changemap`, `travel` | `<map> [delay]` | `servercore.map` | Change map (default 10s) |
+| `map` | `changemap` | `<map> [delay]` | `servercore.map` | Change map (default 10s) |
 | `maps` | `maplist` | | `servercore.map` | List maps and aliases |
 | `restart` | `reboot` | `[delay] [reason]` | `servercore.restart` | Restart (default 60s) |
 | `shutdown` | `stop` | `[delay] [reason]` | `servercore.shutdown` | Shut down (default 60s) |
@@ -90,6 +91,6 @@ See [Targeting players](../features/server-commands#targeting-players) for what 
 
 | Command | Aliases | Usage | Permission | Description |
 |---|---|---|---|---|
-| `logs` | `log`, `history` | `[count] [player]` | `servercore.logs` | Recent admin logs (default 20, max 200) |
+| `logs` | `history` | `[count] [player]` | `servercore.logs` | Recent admin logs (default 20, max 200) |
 | `reload` | | | `servercore.reload` | Reload data from storage |
 | `save` | | | `servercore.reload` | Save data now |

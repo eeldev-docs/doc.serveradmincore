@@ -11,7 +11,7 @@ This page gets you from a fresh install to banning your first test player.
 
 Owners always have every permission and can never be targeted by other players.
 
-1. Start your server, join it and type `/whoami` in chat (or `sc players` in the server console).
+1. Start your server, join it and type `/whoami` in chat (or type `players` in the server console window).
 2. Copy your **player id**, e.g. a SteamID64 like `76561198000000000`.
 3. Open **Project Settings → Plugins → Server Core** and add the id to **Owner Ids**.
 
@@ -52,11 +52,14 @@ results.
 /cancel
 ```
 
-The same commands work in the server console with the `sc` prefix instead of `/`:
+The same commands work typed directly into the dedicated server console window, without the `/`:
 
 ```text
-sc ban Bob 7d Cheating
+ban Bob 7d Cheating
 ```
+
+In the editor console, use the `sc` prefix instead: `sc ban Bob 7d Cheating`. See
+[The server console](../features/server-commands#the-server-console).
 
 ## 4. Give your staff a group
 
