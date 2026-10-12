@@ -84,7 +84,7 @@ CommandPrefix=/
 bWhitelistEnabledByDefault=False
 RestartMode=RelaunchProcess
 RestartExitCode=0
-+MapAliases=(("arena", "/Game/Maps/Arena"))
+MapAliases=(("arena", "/Game/Maps/Arena"))
 +ScheduledAnnouncements=(bEnabled=True,Message="Join our Discord!",IntervalSeconds=900,Type=Chat)
 WelcomeMessage=Welcome {Player}! Type /help for commands.
 ```

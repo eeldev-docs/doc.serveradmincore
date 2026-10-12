@@ -29,7 +29,7 @@ New to the plugin? Start with [Installing the plugin](docfiles/getting_started/i
 | **[Mute / Temp Mute / Unmute](docfiles/features/mutes)** | Blocks text chat and voice chat. Expires automatically. |
 | **[Whitelist](docfiles/features/whitelist)** | Toggle at runtime, add players before they ever join. |
 | **[Admins, Moderators and Permission Groups](docfiles/features/permission-groups)** | Groups with priority, inheritance, wildcards and denials. |
-| **[Server Commands](docfiles/features/server-commands)** | 40+ commands from chat, the server console or Blueprint. Add your own. |
+| **[Server Commands](docfiles/features/server-commands)** | 38 built-in commands from chat, the server console or Blueprint. Add your own. |
 | **[Server Announcements](docfiles/features/announcements)** | Instant, scheduled and welcome messages. |
 | **[Change Map, Restart, Shutdown](docfiles/features/server-control)** | Countdowns with warnings, cancel at any time. |
 | **[Player List and Player Info](docfiles/features/players)** | Play time, known names, ping, IP, ban and mute state. |
