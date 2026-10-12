@@ -6,9 +6,10 @@ title: Introduction
 
 # Server Core
 
-**Dedicated Server Admin for Unreal Engine.**
+**Server admin for Unreal Engine dedicated servers and listen servers.**
 
-Server Core is an admin and moderation toolkit for Unreal Engine dedicated servers. Drop it into your project, start your
+Server Core is an admin and moderation toolkit for Unreal Engine multiplayer games, on **dedicated servers** and
+**listen servers**. Drop it into your project, start your
 server and you get everything players and server owners expect: kick, ban, mute, whitelist, admins and moderators,
 server commands, announcements, map changes, restarts and shutdowns, player info, player notes and admin logs.
 
@@ -42,7 +43,12 @@ New to the plugin? Start with [Installing the plugin](docfiles/getting_started/i
 |---|---|
 | Unreal Engine 5.8 | ✅ Supported |
 
-## Supported platforms
+## Supported server types
 
-Server Core is a runtime plugin without third party dependencies. It runs wherever your dedicated server runs:
-Windows and Linux dedicated servers, as well as listen servers for testing.
+Server Core is a runtime plugin without third party dependencies.
+
+| Server type | Status |
+|---|---|
+| Dedicated server (Windows, Linux) | ✅ Supported |
+| Listen server | ✅ Supported, see [Listen Servers](docfiles/getting_started/listen-servers) |
+| Play In Editor (listen server or dedicated) | ✅ Supported |

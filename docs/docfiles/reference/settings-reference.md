@@ -13,7 +13,7 @@ title: Settings Reference
 | Setting | Config key | Default | Description |
 |---|---|---|---|
 | **Enabled** | `bEnabled` | `true` | Turns ServerCore on or off. |
-| **Active On Listen Server** | `bActiveOnListenServer` | `true` | Dedicated servers are always active. Enable to also run ServerCore on listen servers (handy for testing in PIE). |
+| **Active On Listen Server** | `bActiveOnListenServer` | `true` | Run ServerCore on listen servers, where the hosting player's game is the server. Dedicated servers are always active. |
 | **Active In Standalone** | `bActiveInStandalone` | `false` | Also run ServerCore in standalone games. |
 | **Listen Server Host Is Owner** | `bListenServerHostIsOwner` | `true` | On a listen server the hosting player is treated as an owner. |
 | **Data Directory** | `DataDirectory` | – | Folder for data files. Empty = &lt;Project&gt;/Saved/ServerCore. Relative paths are relative to the project folder. Can be overridden with -ServerCoreDataDir=&lt;path&gt;. |

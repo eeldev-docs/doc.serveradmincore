@@ -5,6 +5,11 @@ title: FAQ
 
 # FAQ and Troubleshooting
 
+## Does Server Core work on listen servers?
+
+Yes. Everything works on listen servers too. The host is an owner by default, and a restart reloads the map. See
+[Listen Servers](./docfiles/getting_started/listen-servers).
+
 ## `sc` says "no active server world found"
 
 You ran the command on a client or in standalone. Server commands only run on the server. In the editor, use
