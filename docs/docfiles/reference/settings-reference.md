@@ -20,6 +20,7 @@ title: Settings Reference
 | **Storage Class** | `StorageClass` | `ServerCoreJsonStorage` | Storage backend. Subclass UServerCoreStorage to use a database or web API instead of JSON files. |
 | **Auto Add Player Component** | `bAutoAddPlayerComponent` | `true` | Component added to every player controller on the server. Used for chat, commands, announcements and admin panels. |
 | **Player Component Class** | `PlayerComponentClass` | `ServerCorePlayerComponent` | Class of the auto-added player component. Use your own subclass to extend it. |
+| **Enable Console Input** | `bEnableConsoleInput` | `true` | Read commands typed into the dedicated server console (the Windows -log window, or the terminal on Linux). Lines run as ServerCore commands or Unreal console commands. Disable with -NoServerCoreConsole. |
 
 ## Permissions
 

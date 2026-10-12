@@ -10,7 +10,8 @@ Server Core comes with 40+ admin commands. They can be run from three places:
 | From | How | Permissions |
 |---|---|---|
 | **Chat** | Type the prefix (default `/`): `/kick Bob spam` | The player's permissions |
-| **Server console** | `sc kick Bob spam` or `ServerCore kick Bob spam` | All permissions |
+| **Server console** | Type in the dedicated server window: `kick Bob spam` | All permissions |
+| **Editor console** | `sc kick Bob spam` or `ServerCore kick Bob spam` | All permissions |
 | **Blueprint / C++** | **Execute Command** (Caller, Command Line) | The caller's permissions |
 
 The full list is in the [Command Reference](../reference/command-reference).
@@ -31,16 +32,24 @@ If a partial name matches several players, the command lists them and asks you t
 
 ## The server console
 
-On a dedicated server, type commands in the server console window, or send them through your hosting panel or RCON
-tool as the console command `sc <command>`:
+Unreal's dedicated server log window is normally output only. Server Core adds input to it, so you can type commands
+straight into the server window and press Enter:
 
 ```text
-sc players
-sc ban Bob 7d Cheating
-sc restart 5m Update
+players
+ban Bob 7d Cheating
+restart 5m Update
+stat net
 ```
 
-Console commands run as a system caller with every permission.
+- **Windows:** start the server with `-log` to get the console window.
+- **Linux:** start the server in a terminal (or `screen`/`tmux`, or `docker run -it`). Commands are read from stdin.
+- Lines that are ServerCore commands run as ServerCore commands. Anything else runs as a normal Unreal console command.
+- Console commands run as a system caller with every permission.
+- Turn it off with **Enable Console Input** in the settings or `-NoServerCoreConsole` on the command line.
+
+From the **editor console**, or from tools that send Unreal console commands (RCON plugins, hosting panels), use the
+`sc` prefix: `sc players`, `sc ban Bob 7d Cheating`.
 
 ## Help
 

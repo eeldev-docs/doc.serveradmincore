@@ -25,3 +25,14 @@ The other windows are normal players you can kick, ban and mute.
 
 Select **Play As Client** in the Net Mode dropdown. The editor starts a dedicated server in the background and connects
 the clients to it. Type server commands in the editor console with `sc`, they run on the server world.
+
+### A separate server window
+
+To get a real dedicated server window you can type commands into, uncheck **Run Under One Process** in
+**Editor Preferences → Level Editor → Play → Multiplayer Options**, or start the server from the command line:
+
+```bat
+"C:\Program Files\Epic Games\UE_5.8\Engine\Binaries\Win64\UnrealEditor.exe" "C:\Path\To\YourGame.uproject" /Game/Maps/YourMap -server -log
+```
+
+Type commands straight into that window, without `sc`: `players`, `kick Bob`. Connect a client with `open 127.0.0.1`.
