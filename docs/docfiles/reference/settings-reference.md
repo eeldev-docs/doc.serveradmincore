@@ -69,8 +69,8 @@ title: Settings Reference
 
 | Setting | Config key | Default | Description |
 |---|---|---|---|
-| **Restart Mode** | `RestartMode` | `EServerCoreRestartMode::ExitProcess` | Exit Process or Reload Map. See Change Map, Restart and Shutdown. |
-| **Restart Exit Code** | `RestartExitCode` | `0` | Exit code used for restarts in Exit Process mode. |
+| **Restart Mode** | `RestartMode` | `EServerCoreRestartMode::RelaunchProcess` | Relaunch Process, Exit Process or Reload Map. See Change Map, Restart and Shutdown. |
+| **Restart Exit Code** | `RestartExitCode` | `0` | Exit code used for restarts in Exit Process and Relaunch Process mode. |
 | **Countdown Warnings** | `CountdownWarnings` | 600, 300, 120, 60, 30, 15, 10, 5, 4, 3, 2, 1 | Seconds left at which a countdown warning is announced. |
 | **Map Aliases** | `MapAliases` | – | Short names for maps, e.g. "arena" -&gt; "/Game/Maps/Arena". |
 | **Map Search Paths** | `MapSearchPaths` | `/Game` | Content paths searched when a map is given by short name and listed by the "maps" command. |

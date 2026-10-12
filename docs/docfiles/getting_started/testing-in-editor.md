@@ -16,7 +16,7 @@ The other windows are normal players you can kick, ban and mute.
 
 :::note
 - Kicking or banning the host itself is not possible, it is the server.
-- **Restart** and **Shutdown** in *Exit Process* mode do not close the editor. They log a warning instead.
+- **Restart** and **Shutdown** in *Relaunch Process* and *Exit Process* mode do not close the editor. They log a warning instead.
 - Without an online subsystem, player ids look like `Session_256` and only last for the current session. Use the Steam or
   EOS online subsystem to test persistent bans.
 :::
