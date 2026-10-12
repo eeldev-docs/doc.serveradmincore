@@ -59,7 +59,8 @@ in a packaged build**.
 
 ## Restart modes
 
-**Restart Mode** decides what a restart does:
+**Restart Mode** decides what a restart does on a dedicated server. On a [listen server](../getting_started/listen-servers)
+a restart always reloads the current map, since the server is the host's game.
 
 | Mode | What happens | Use when |
 |---|---|---|

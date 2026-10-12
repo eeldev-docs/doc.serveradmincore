@@ -18,7 +18,8 @@ Restart the editor when asked.
 
 :::note
 Server Core is a code plugin. A Blueprint only project works fine, but you need a C++ project (or a source build of the
-engine) to **package a dedicated server**, since Unreal Engine does not ship prebuilt server targets.
+engine) to **package a dedicated server**, since Unreal Engine does not ship prebuilt server targets. Listen servers
+work in any project.
 :::
 
 ## Installing manually (project plugin)

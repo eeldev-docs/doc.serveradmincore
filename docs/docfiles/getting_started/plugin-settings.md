@@ -17,11 +17,11 @@ This page covers the most important settings. Every setting is listed in the
 Turns the whole plugin on or off.
 
 ### Active On Listen Server / Active In Standalone
-Server Core is always active on **dedicated servers**. Enable these to also run it on listen servers (great for testing in
-PIE) or in standalone games.
+Server Core is always active on **dedicated servers**. **Active On Listen Server** (on by default) also runs it on
+[listen servers](listen-servers). **Active In Standalone** runs it in standalone games.
 
 ### Listen Server Host Is Owner
-On a listen server, the hosting player gets every permission.
+On a [listen server](listen-servers), the hosting player gets every permission.
 
 ### Data Directory
 Where data files are stored. Empty means `<Project>/Saved/ServerCore`. Can be overridden with

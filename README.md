@@ -1,6 +1,6 @@
 # doc-servercore
 
-Documentation for the Server Core (Dedicated Server Admin) Unreal Engine plugin.
+Documentation for the Server Core Unreal Engine plugin: server admin for dedicated and listen servers.
 
 ```bash
 npm ci
