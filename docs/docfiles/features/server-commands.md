@@ -5,7 +5,7 @@ title: Server Commands
 
 # Server Commands
 
-Server Core comes with 40+ admin commands. They can be run from three places:
+Server Core comes with 38 built-in admin commands. They can be run from three places:
 
 | From | How | Permissions |
 |---|---|---|
@@ -25,8 +25,8 @@ Commands that take a `<player>` accept:
 | Name | `Bob` | Exact name, or a unique part of a name (`bo` → `Bobby`) |
 | Quoted name | `"Some Name"` | Names with spaces |
 | Index | `#3` | Player number 3 in `/players` |
-| Player id | `76561198000000000` | Online, or offline players that joined before |
-| `id:` prefix | `id:76561198000000000` | Only this exact id. Ban, unmute, whitelist, setgroup, notes and logs also accept players that have never joined |
+| Player id | `76561198000000000` | Online players, plus offline players that joined before for commands that work on offline players (not `kick` and `msg`) |
+| `id:` prefix | `id:76561198000000000` | Only this exact id. `ban`, `ipban`, `tempban`, `unmute`, `whitelist add`, `setgroup`, `removegroup`, `note`, `notes` and `logs` also accept players that have never joined |
 
 If a partial name matches several players, the command lists them and asks you to be more specific.
 

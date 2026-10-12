@@ -13,7 +13,10 @@ Initial release for Unreal Engine 5.8.
 - Mute, temp mute and unmute for text and voice chat
 - Whitelist with staff bypass
 - Permission groups with priority, inheritance, wildcards and denials
-- 41 built-in server commands from chat, server console and Blueprint
+- 38 built-in server commands from chat, the server console and Blueprint
+- Commands typed directly into the dedicated server console window (Windows and Linux)
+- Restart modes: relaunch process, exit process (for supervisors) and reload map
+- Full listen server support
 - Custom commands from Blueprint and C++
 - Instant, scheduled and welcome announcements
 - Change map, restart and shutdown with countdowns
