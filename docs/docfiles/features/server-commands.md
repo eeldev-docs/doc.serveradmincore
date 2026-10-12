@@ -43,7 +43,10 @@ stat net
 ```
 
 - **Windows:** start the server with `-log` to get the console window.
-- **Linux:** start the server in a terminal (or `screen`/`tmux`, or `docker run -it`). Commands are read from stdin.
+- **Linux:** start the server in a terminal, in `screen`/`tmux`, or with `docker run -it` (attach with `docker attach`).
+  Commands are read from stdin. While the server runs as a background job (`./Server.sh &`) input is paused until you
+  bring it back with `fg`. Under systemd or `nohup` there is no terminal, so console input is simply off. Use `screen`
+  or `tmux` if you want to type commands into a server running as a service.
 - Lines that are ServerCore commands run as ServerCore commands. Anything else runs as a normal Unreal console command.
 - Console commands run as a system caller with every permission.
 - Turn it off with **Enable Console Input** in the settings or `-NoServerCoreConsole` on the command line.
