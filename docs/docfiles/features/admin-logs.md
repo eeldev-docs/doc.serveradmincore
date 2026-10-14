@@ -38,7 +38,7 @@ Permission: `serveradmincore.logs`
 
 `Kick`, `Ban`, `TempBan`, `Unban`, `Mute`, `TempMute`, `Unmute`, `WhitelistAdd`, `WhitelistRemove`, `WhitelistToggle`,
 `GroupAssign`, `GroupEdit`, `GroupDelete`, `NoteAdd`, `NoteRemove`, `Announcement`, `ChangeMap`, `Restart`, `Shutdown`,
-`CancelServerAction`, `Command`, `PlayerJoin`, `PlayerLeave`, `LoginRejected`, `DataReload`, `Custom`.
+`CancelServerAction`, `Command`, `PlayerJoin`, `PlayerLeave`, `LoginRejected`, `DataReload`, `Custom`, `AfkKick`, `PingKick`.
 
 Joins and leaves can be turned off with **Log Joins And Leaves**. Turn on **Log All Commands** to also log every command
 line that is run.

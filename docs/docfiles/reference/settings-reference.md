@@ -65,6 +65,25 @@ title: Settings Reference
 | **Scheduled Announcements** | `ScheduledAnnouncements` | – | Messages repeated on an interval. See Server Announcements. |
 | **Welcome Message** | `WelcomeMessage` | – | Shown to a player when they join. Empty = disabled. Supports `{Player}`. |
 
+## Auto Kick
+
+See [AFK and High Ping Kick](../features/auto-kick).
+
+| Setting | Config key | Default | Description |
+|---|---|---|---|
+| **Afk Kick Enabled** | `bAfkKickEnabled` | `false` | Kick players that have been idle for Afk Kick Seconds. Players with serveradmincore.afk.bypass are never kicked. |
+| **Afk Kick Seconds** | `AfkKickSeconds` | `600` | Seconds without activity before a player is kicked. Moving or turning the pawn, chat and commands count as activity. Minimum 30. |
+| **Afk Warning Seconds** | `AfkWarningSeconds` | `60` | Seconds before the kick at which the player is warned. 0 = no warning. |
+| **Afk Min Players** | `AfkMinPlayers` | `0` | Only kick idle players when at least this many players are online. 0 = always. |
+| **High Ping Kick Enabled** | `bHighPingKickEnabled` | `false` | Kick players whose ping stays above Max Ping Ms for High Ping Grace Seconds. Players with serveradmincore.ping.bypass are never kicked. |
+| **Max Ping Ms** | `MaxPingMs` | `250` | Ping limit in milliseconds. |
+| **High Ping Grace Seconds** | `HighPingGraceSeconds` | `30` | Seconds in a row the ping has to stay above the limit before the player is kicked. |
+| **Ping Check Delay After Join** | `PingCheckDelayAfterJoin` | `30` | Ping is not checked during the first seconds after joining or a map change. |
+| **Afk Warning Message** | `AfkWarningMessage` | `"You will be kicked for being AFK in {Time}."` | Supports `{Time}`. Empty = no message, On Auto Kick Warning still fires. |
+| **Afk Kick Message** | `AfkKickMessage` | `"You were kicked for being AFK for {Time}."` | Supports `{Time}`. |
+| **High Ping Warning Message** | `HighPingWarningMessage` | `"Your ping ({Ping} ms) is above the server limit of {MaxPing} ms. You will be kicked in {Time} if it stays this high."` | Supports `{Ping}`, `{MaxPing}`, `{Time}`. Empty = no message, On Auto Kick Warning still fires. |
+| **High Ping Kick Message** | `HighPingKickMessage` | `"You were kicked because your ping ({Ping} ms) was above the server limit of {MaxPing} ms."` | Supports `{Ping}`, `{MaxPing}`. |
+
 ## Server Control
 
 | Setting | Config key | Default | Description |

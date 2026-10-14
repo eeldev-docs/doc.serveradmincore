@@ -25,6 +25,8 @@ All built-in nodes. In C++ they are available as constants in the `ServerAdminCo
 | `serveradmincore.unmute` | `Unmute` | Removing mutes |
 | `serveradmincore.whitelist` | `Whitelist` | Managing the whitelist |
 | `serveradmincore.whitelist.bypass` | `WhitelistBypass` | Joining while the whitelist is on |
+| `serveradmincore.afk.bypass` | `AfkBypass` | Never kicked for being AFK |
+| `serveradmincore.ping.bypass` | `PingBypass` | Never kicked for high ping |
 | `serveradmincore.group.list` | `GroupList` | `groups`, `group` |
 | `serveradmincore.group.set` | `GroupSet` | `setgroup`, `removegroup` |
 | `serveradmincore.group.edit` | `GroupEdit` | Creating, editing and deleting groups |

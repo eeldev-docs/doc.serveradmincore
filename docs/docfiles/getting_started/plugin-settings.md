@@ -66,6 +66,11 @@ Delivers chat sent through Server Admin Core to every player. Turn it off if you
 Scheduled announcements that repeat on an interval, and a welcome message shown when a player joins.
 See [Server Announcements](../features/announcements).
 
+## Auto Kick
+
+AFK kick and high ping kick, both off by default, with warning times, limits and messages.
+See [AFK and High Ping Kick](../features/auto-kick).
+
 ## Server Control
 
 Restart mode, exit code, countdown warnings, map aliases and map search paths.
