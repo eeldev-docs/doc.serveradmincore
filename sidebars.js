@@ -7,7 +7,7 @@
 
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
-  serverCoreSidebar: [
+  serverAdminCoreSidebar: [
     {
       type: 'doc',
       id: 'introduction'

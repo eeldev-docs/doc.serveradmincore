@@ -1,4 +1,4 @@
-# doc-servercore
+# doc-serveradmincore
 
 Documentation for the Server Admin Core Unreal Engine plugin: server admin for dedicated and listen servers.
 
