@@ -11,7 +11,7 @@ With the default JSON storage, data is stored in `<Project>/Saved/ServerAdminCor
 Change the location with **Data Directory** in the settings, or per server with:
 
 ```bash
-MyGameServer -log -ServerAdminCoreDataDir=/srv/mygame/servercore
+MyGameServer -log -ServerAdminCoreDataDir=/srv/mygame/serveradmincore
 ```
 
 Relative paths are relative to the project folder.

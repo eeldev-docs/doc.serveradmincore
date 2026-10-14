@@ -7,13 +7,13 @@ import {themes as prismThemes} from 'prism-react-renderer';
 const config = {
   title: 'Server Admin Core Documentation',
   tagline: 'Server Admin Core - Server Admin for Dedicated and Listen Servers',
-  url: 'https://servercore.eeldev.com',
+  url: 'https://serveradmincore.eeldev.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/eeldev_icon.png',
   organizationName: 'eeldev-docs', // Usually your GitHub org/user name.
-  projectName: 'doc.servercore', // Usually your repo name.
+  projectName: 'doc.serveradmincore', // Usually your repo name.
   plugins: [require.resolve("docusaurus-plugin-image-zoom")],
   deploymentBranch: 'deployment',
   trailingSlash: false,
