@@ -5,6 +5,14 @@ sidebar_position: 99
 
 # Changelog
 
+## Unreleased
+
+- AFK kick: kicks idle players after a configurable time, with a warning first and an optional minimum player count
+- High ping kick: kicks players whose ping stays above a limit for a grace period
+- New permissions `serveradmincore.afk.bypass` and `serveradmincore.ping.bypass`
+- New admin log actions `AfkKick` and `PingKick`
+- New Blueprint/C++ API: Report Player Activity, Get Player Idle Seconds, On Auto Kick Warning
+
 ## 1.0.0
 
 Initial release for Unreal Engine 5.8.
