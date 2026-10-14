@@ -5,9 +5,9 @@ title: Events
 
 # Events
 
-## Server events (Server Core subsystem)
+## Server events (Server Admin Core subsystem)
 
-Bind these on **Get Server Core**, on the server.
+Bind these on **Get Server Admin Core**, on the server.
 
 | Event | Parameters | When |
 |---|---|---|
@@ -21,7 +21,7 @@ Bind these on **Get Server Core**, on the server.
 | **On Player Group Changed** | Player Id, New Group | |
 | **On Whitelist Changed** | Enabled | |
 | **On Announcement** | Message, Type | Every announcement, including countdown warnings |
-| **On Chat Message** | Sender, Message | Chat sent through Server Core, after the mute check |
+| **On Chat Message** | Sender, Message | Chat sent through Server Admin Core, after the mute check |
 | **On Command Executed** | Caller, Command Line, Result | |
 | **On Pending Action Changed** | Action | Map change, restart or shutdown scheduled, cancelled or executed |
 | **On Admin Log** | Entry | Every admin log entry |
@@ -33,7 +33,7 @@ on the game instance survive map changes.
 
 ## Client events (Player Component)
 
-Bind these on the **ServerCore Player Component** of the local player controller.
+Bind these on the **ServerAdminCore Player Component** of the local player controller.
 
 | Event | Parameters |
 |---|---|

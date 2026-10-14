@@ -5,13 +5,13 @@ title: Server Commands
 
 # Server Commands
 
-Server Core comes with 38 built-in admin commands. They can be run from three places:
+Server Admin Core comes with 38 built-in admin commands. They can be run from three places:
 
 | From | How | Permissions |
 |---|---|---|
 | **Chat** | Type the prefix (default `/`): `/kick Bob spam` | The player's permissions |
 | **Server console** | Type in the dedicated server window: `kick Bob spam` | All permissions |
-| **Editor console** | `sc kick Bob spam` or `ServerCore kick Bob spam` | All permissions |
+| **Editor console** | `sac kick Bob spam` or `ServerAdminCore kick Bob spam` | All permissions |
 | **Blueprint / C++** | **Execute Command** (Caller, Command Line) | The caller's permissions |
 
 The full list is in the [Command Reference](../reference/command-reference).
@@ -32,7 +32,7 @@ If a partial name matches several players, the command lists them and asks you t
 
 ## The server console
 
-Unreal's dedicated server log window is normally output only. Server Core adds input to it, so you can type commands
+Unreal's dedicated server log window is normally output only. Server Admin Core adds input to it, so you can type commands
 straight into the server window and press Enter:
 
 ```text
@@ -47,12 +47,12 @@ stat net
   Commands are read from stdin. While the server runs as a background job (`./Server.sh &`) input is paused until you
   bring it back with `fg`. Under systemd or `nohup` there is no terminal, so console input is simply off. Use `screen`
   or `tmux` if you want to type commands into a server running as a service.
-- Lines that are ServerCore commands run as ServerCore commands. Anything else runs as a normal Unreal console command.
+- Lines that are ServerAdminCore commands run as ServerAdminCore commands. Anything else runs as a normal Unreal console command.
 - Console commands run as a system caller with every permission.
-- Turn it off with **Enable Console Input** in the settings or `-NoServerCoreConsole` on the command line.
+- Turn it off with **Enable Console Input** in the settings or `-NoServerAdminCoreConsole` on the command line.
 
 From the **editor console**, or from tools that send Unreal console commands (RCON plugins, hosting panels), use the
-`sc` prefix: `sc players`, `sc ban Bob 7d Cheating`.
+`sac` prefix: `sac players`, `sac ban Bob 7d Cheating`.
 
 ## Help
 

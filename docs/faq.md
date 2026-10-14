@@ -5,12 +5,12 @@ title: FAQ
 
 # FAQ and Troubleshooting
 
-## Does Server Core work on listen servers?
+## Does Server Admin Core work on listen servers?
 
 Yes. Everything works on listen servers too. The host is an owner by default, and a restart reloads the map. See
 [Listen Servers](./docfiles/getting_started/listen-servers).
 
-## `sc` says "no active server world found"
+## `sac` says "no active server world found"
 
 You ran the command on a client or in standalone. Server commands only run on the server. In the editor, use
 **Play As Listen Server** or **Play As Client** (which starts a dedicated server). See
@@ -19,7 +19,7 @@ You ran the command on a client or in standalone. Server commands only run on th
 ## Bans don't survive a restart / player ids look like `Session_256`
 
 There is no online subsystem, so players have no persistent id. Enable the Steam or EOS online subsystem in your project.
-Server Core then uses the SteamID64 or ProductUserId as the player id.
+Server Admin Core then uses the SteamID64 or ProductUserId as the player id.
 
 ## Players can still chat while muted
 
@@ -60,7 +60,7 @@ See [Restart modes](./docfiles/features/server-control#restart-modes).
 
 ## Where is my data?
 
-`<Project>/Saved/ServerCore` by default. See [Data Files](./docfiles/reference/data-files).
+`<Project>/Saved/ServerAdminCore` by default. See [Data Files](./docfiles/reference/data-files).
 
 ## Can several servers share bans?
 

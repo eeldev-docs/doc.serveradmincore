@@ -12,11 +12,11 @@ players who are offline or have never joined.
 
 | Command | Description | Permission |
 |---|---|---|
-| `/ban <player> [duration] [reason]` | Permanent ban, or timed if a duration is given | `servercore.ban` |
-| `/tempban <player> <duration> [reason]` | Timed ban | `servercore.tempban` |
-| `/ipban <player> [duration] [reason]` | Ban the player and their last known IP | `servercore.ban.ip` |
-| `/unban <player\|id>` | Remove a ban | `servercore.unban` |
-| `/bans [count]` | List recent bans | `servercore.ban` |
+| `/ban <player> [duration] [reason]` | Permanent ban, or timed if a duration is given | `serveradmincore.ban` |
+| `/tempban <player> <duration> [reason]` | Timed ban | `serveradmincore.tempban` |
+| `/ipban <player> [duration] [reason]` | Ban the player and their last known IP | `serveradmincore.ban.ip` |
+| `/unban <player\|id>` | Remove a ban | `serveradmincore.unban` |
+| `/bans [count]` | List recent bans | `serveradmincore.ban` |
 
 ```text
 /ban Bob Cheating
@@ -28,7 +28,7 @@ players who are offline or have never joined.
 ```
 
 :::tip
-`servercore.tempban` lets moderators ban for a limited time without being able to hand out permanent bans. A
+`serveradmincore.tempban` lets moderators ban for a limited time without being able to hand out permanent bans. A
 moderator with only `tempban` also can't replace an existing permanent ban.
 :::
 
@@ -75,6 +75,6 @@ Timed bans are removed automatically when they expire, and the removal is logged
 
 ```cpp
 // Anti-cheat: ban for 30 days, including IP.
-ServerCore->BanPlayer(FServerCoreCaller::System(TEXT("AntiCheat")), PlayerId,
+ServerAdminCore->BanPlayer(FServerAdminCoreCaller::System(TEXT("AntiCheat")), PlayerId,
     TEXT("Speed hack detected"), 30 * 24 * 3600, /*bBanIPAddress*/ true);
 ```

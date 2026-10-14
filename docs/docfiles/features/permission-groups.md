@@ -15,7 +15,7 @@ These are created the first time the server starts:
 | Group | Priority | Permissions | Inherits |
 |---|---|---|---|
 | **Owner** | 1000 | `*` | |
-| **Admin** | 100 | `servercore.*`, `-servercore.group.edit` | Moderator |
+| **Admin** | 100 | `serveradmincore.*`, `-serveradmincore.group.edit` | Moderator |
 | **Moderator** | 50 | info, kick, tempban, mute, tempmute, unmute, notes.view, notes.add, announce, logs, whitelist.bypass, group.list | Default |
 | **Default** | 0 | help, players | |
 
@@ -23,7 +23,7 @@ Players without an assigned group are in **Default**.
 
 ## Owners
 
-Players listed in **Owner Ids** (or passed with `-ServerCoreOwners=`) always have every permission, report the group
+Players listed in **Owner Ids** (or passed with `-ServerAdminCoreOwners=`) always have every permission, report the group
 *Owner*, and can't be targeted by anyone. Use this for yourself and your co-owners.
 
 ## Assigning groups
@@ -41,10 +41,10 @@ In Blueprint: **Set Player Group** (Caller, Player Id, Group Name). An empty gro
 
 | Pattern | Meaning |
 |---|---|
-| `servercore.kick` | One permission |
-| `servercore.*` | Everything starting with `servercore.` |
+| `serveradmincore.kick` | One permission |
+| `serveradmincore.*` | Everything starting with `serveradmincore.` |
 | `*` | Everything |
-| `-servercore.shutdown` | Deny. A denial always wins over a grant. |
+| `-serveradmincore.shutdown` | Deny. A denial always wins over a grant. |
 
 All built-in nodes are listed in the [Permission Nodes](../reference/permission-nodes) reference.
 

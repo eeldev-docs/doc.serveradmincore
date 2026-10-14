@@ -12,9 +12,9 @@ the server console and **Execute Command**.
 
 Register commands on the server, for example in your Game Mode's **Begin Play**:
 
-1. **Get Server Core**
+1. **Get Server Admin Core**
 2. **Register Command**
-   - **Info**: make a `ServerCore Command Info`
+   - **Info**: make a `ServerAdminCore Command Info`
      - **Name**: `heal`
      - **Aliases**: `h`
      - **Permission**: `mygame.heal`
@@ -34,7 +34,7 @@ Return a string. It is sent back to whoever ran the command (multiple lines are 
 
 ```text
 Function HandleHeal (Caller, Args) → String
- ├─ Get Server Core → Find Player (Args[0], Include Offline = false)
+ ├─ Get Server Admin Core → Find Player (Args[0], Include Offline = false)
  │    ├─ false → return Error
  │    └─ true  → Get Player Controller (Player Id) → Get Pawn → heal
  └─ return "Healed " + Player Name

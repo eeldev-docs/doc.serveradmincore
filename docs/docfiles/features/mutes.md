@@ -5,17 +5,17 @@ title: Mute, Temp Mute and Unmute
 
 # Mute, Temp Mute and Unmute
 
-Muted players can't send chat messages through Server Core. With **Mute Voice Chat** enabled (default), they are also
+Muted players can't send chat messages through Server Admin Core. With **Mute Voice Chat** enabled (default), they are also
 muted in voice chat for every other player.
 
 ## Commands
 
 | Command | Description | Permission |
 |---|---|---|
-| `/mute <player> [duration] [reason]` | Permanent mute, or timed if a duration is given | `servercore.mute` |
-| `/tempmute <player> <duration> [reason]` | Timed mute | `servercore.tempmute` |
-| `/unmute <player>` | Remove a mute | `servercore.unmute` |
-| `/mutes` | List muted players | `servercore.mute` |
+| `/mute <player> [duration] [reason]` | Permanent mute, or timed if a duration is given | `serveradmincore.mute` |
+| `/tempmute <player> <duration> [reason]` | Timed mute | `serveradmincore.tempmute` |
+| `/unmute <player>` | Remove a mute | `serveradmincore.unmute` |
+| `/mutes` | List muted players | `serveradmincore.mute` |
 
 ```text
 /mute Bob Toxic
@@ -36,7 +36,7 @@ Durations work like [ban durations](bans#durations).
 
 If your game has its own chat system, check the mute before you deliver a message:
 
-**Get Server Core** → **Is Player Muted** (Player Id) → Branch
+**Get Server Admin Core** → **Is Player Muted** (Player Id) → Branch
 
 Or send your chat through **Broadcast Chat Message**, which returns **Muted** if the sender is muted.
 

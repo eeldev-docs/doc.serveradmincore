@@ -5,8 +5,8 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Server Core Documentation',
-  tagline: 'Server Core - Server Admin for Dedicated and Listen Servers',
+  title: 'Server Admin Core Documentation',
+  tagline: 'Server Admin Core - Server Admin for Dedicated and Listen Servers',
   url: 'https://servercore.eeldev.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',

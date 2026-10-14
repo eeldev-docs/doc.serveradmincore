@@ -12,9 +12,9 @@ watch"*. Players never see them.
 
 | Command | Description | Permission |
 |---|---|---|
-| `/note <player> <text>` | Add a note | `servercore.notes.add` |
-| `/notes <player>` | Read notes, newest first | `servercore.notes.view` |
-| `/delnote <note id>` | Delete a note | `servercore.notes.remove` |
+| `/note <player> <text>` | Add a note | `serveradmincore.notes.add` |
+| `/notes <player>` | Read notes, newest first | `serveradmincore.notes.view` |
+| `/delnote <note id>` | Delete a note | `serveradmincore.notes.remove` |
 
 ```text
 /note Bob Warned for team killing

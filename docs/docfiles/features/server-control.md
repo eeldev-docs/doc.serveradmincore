@@ -12,12 +12,12 @@ cancelled at any time.
 
 | Command | Description | Permission |
 |---|---|---|
-| `/map <map> [delay]` | Change map (default delay 10s) | `servercore.map` |
-| `/maps` | List available maps and aliases | `servercore.map` |
-| `/restart [delay] [reason]` | Restart (default delay 60s) | `servercore.restart` |
-| `/shutdown [delay] [reason]` | Shut down (default delay 60s) | `servercore.shutdown` |
-| `/cancel` | Cancel the scheduled action | `servercore.cancel` |
-| `/status` | Shows the scheduled action and time left | `servercore.players` |
+| `/map <map> [delay]` | Change map (default delay 10s) | `serveradmincore.map` |
+| `/maps` | List available maps and aliases | `serveradmincore.map` |
+| `/restart [delay] [reason]` | Restart (default delay 60s) | `serveradmincore.restart` |
+| `/shutdown [delay] [reason]` | Shut down (default delay 60s) | `serveradmincore.shutdown` |
+| `/cancel` | Cancel the scheduled action | `serveradmincore.cancel` |
+| `/status` | Shows the scheduled action and time left | `serveradmincore.players` |
 
 ```text
 /map Arena

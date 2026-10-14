@@ -6,26 +6,26 @@ title: How it works
 # How it works
 
 ```text
-UServerCoreSubsystem (GameInstanceSubsystem, server)   all logic, survives map changes
- ├─ UServerCoreStorage                                 persistence (default: JSON files)
+UServerAdminCoreSubsystem (GameInstanceSubsystem, server)   all logic, survives map changes
+ ├─ UServerAdminCoreStorage                                 persistence (default: JSON files)
  ├─ Command registry                                   built-in and custom commands
- └─ UServerCorePlayerComponent                         on every PlayerController, replicated
+ └─ UServerAdminCorePlayerComponent                         on every PlayerController, replicated
                                                        chat, commands, announcements, admin panel data
-UServerCoreBlueprintLibrary                            helpers (player id, durations, permissions)
-UServerCoreSettings                                    Project Settings → Plugins → Server Core
+UServerAdminCoreBlueprintLibrary                            helpers (player id, durations, permissions)
+UServerAdminCoreSettings                                    Project Settings → Plugins → Server Admin Core
 ```
 
 ## The subsystem
 
-`UServerCoreSubsystem` is a **Game Instance Subsystem**. There is one per server and it lives for the whole server
+`UServerAdminCoreSubsystem` is a **Game Instance Subsystem**. There is one per server and it lives for the whole server
 session, across map changes. It tracks players, enforces bans and the whitelist at login, runs commands, schedules
 restarts and saves data.
 
-Get it in Blueprint with **Get Server Core**, or in C++ with `UServerCoreSubsystem::Get(this)`.
+Get it in Blueprint with **Get Server Admin Core**, or in C++ with `UServerAdminCoreSubsystem::Get(this)`.
 
 ## Callers
 
-Every moderation function takes an **`FServerCoreCaller`**: who is doing this?
+Every moderation function takes an **`FServerAdminCoreCaller`**: who is doing this?
 
 | Caller | Created with | Checks |
 |---|---|---|

@@ -5,28 +5,28 @@ title: Settings Reference
 
 # Settings Reference
 
-**Project Settings → Plugins → Server Core**, stored in `Config/DefaultGame.ini` under
-`[/Script/ServerCore.ServerCoreSettings]`. The *Config key* column is the name to use in the ini file.
+**Project Settings → Plugins → Server Admin Core**, stored in `Config/DefaultGame.ini` under
+`[/Script/ServerAdminCore.ServerAdminCoreSettings]`. The *Config key* column is the name to use in the ini file.
 
 ## General
 
 | Setting | Config key | Default | Description |
 |---|---|---|---|
-| **Enabled** | `bEnabled` | `true` | Turns ServerCore on or off. |
-| **Active On Listen Server** | `bActiveOnListenServer` | `true` | Run ServerCore on listen servers, where the hosting player's game is the server. Dedicated servers are always active. |
-| **Active In Standalone** | `bActiveInStandalone` | `false` | Also run ServerCore in standalone games. |
+| **Enabled** | `bEnabled` | `true` | Turns ServerAdminCore on or off. |
+| **Active On Listen Server** | `bActiveOnListenServer` | `true` | Run ServerAdminCore on listen servers, where the hosting player's game is the server. Dedicated servers are always active. |
+| **Active In Standalone** | `bActiveInStandalone` | `false` | Also run ServerAdminCore in standalone games. |
 | **Listen Server Host Is Owner** | `bListenServerHostIsOwner` | `true` | On a listen server the hosting player is treated as an owner. |
-| **Data Directory** | `DataDirectory` | – | Folder for data files. Empty = &lt;Project&gt;/Saved/ServerCore. Relative paths are relative to the project folder. Can be overridden with -ServerCoreDataDir=&lt;path&gt;. |
-| **Storage Class** | `StorageClass` | `ServerCoreJsonStorage` | Storage backend. Subclass UServerCoreStorage to use a database or web API instead of JSON files. |
+| **Data Directory** | `DataDirectory` | – | Folder for data files. Empty = &lt;Project&gt;/Saved/ServerAdminCore. Relative paths are relative to the project folder. Can be overridden with -ServerAdminCoreDataDir=&lt;path&gt;. |
+| **Storage Class** | `StorageClass` | `ServerAdminCoreJsonStorage` | Storage backend. Subclass UServerAdminCoreStorage to use a database or web API instead of JSON files. |
 | **Auto Add Player Component** | `bAutoAddPlayerComponent` | `true` | Component added to every player controller on the server. Used for chat, commands, announcements and admin panels. |
-| **Player Component Class** | `PlayerComponentClass` | `ServerCorePlayerComponent` | Class of the auto-added player component. Use your own subclass to extend it. |
-| **Enable Console Input** | `bEnableConsoleInput` | `true` | Read commands typed into the dedicated server console (the Windows -log window, or the terminal on Linux). Lines run as ServerCore commands or Unreal console commands. Disable with -NoServerCoreConsole. |
+| **Player Component Class** | `PlayerComponentClass` | `ServerAdminCorePlayerComponent` | Class of the auto-added player component. Use your own subclass to extend it. |
+| **Enable Console Input** | `bEnableConsoleInput` | `true` | Read commands typed into the dedicated server console (the Windows -log window, or the terminal on Linux). Lines run as ServerAdminCore commands or Unreal console commands. Disable with -NoServerAdminCoreConsole. |
 
 ## Permissions
 
 | Setting | Config key | Default | Description |
 |---|---|---|---|
-| **Owner Ids** | `OwnerIds` | – | Player ids that always have every permission. Can be extended with -ServerCoreOwners=Id1,Id2 |
+| **Owner Ids** | `OwnerIds` | – | Player ids that always have every permission. Can be extended with -ServerAdminCoreOwners=Id1,Id2 |
 | **Owner Group Name** | `OwnerGroupName` | `"Owner"` | Group name reported for owners. |
 | **Default Group Name** | `DefaultGroupName` | `"Default"` | Group used for players without an assigned group. |
 | **Default Groups** | `DefaultGroups` | Owner, Admin, Moderator, Default | Groups created the first time the server runs (when no Groups.json exists). Edit groups at runtime with commands or Blueprint afterwards. |
@@ -53,7 +53,7 @@ title: Settings Reference
 | Setting | Config key | Default | Description |
 |---|---|---|---|
 | **Command Prefix** | `CommandPrefix` | `"/"` | Chat messages starting with this prefix are run as commands. |
-| **Broadcast Chat To Players** | `bBroadcastChatToPlayers` | `true` | Send chat from UServerCorePlayerComponent::SendChatMessage to every player. Disable if you only want OnChatMessage and handle delivery yourself. |
+| **Broadcast Chat To Players** | `bBroadcastChatToPlayers` | `true` | Send chat from UServerAdminCorePlayerComponent::SendChatMessage to every player. Disable if you only want OnChatMessage and handle delivery yourself. |
 | **Max Chat Message Length** | `MaxChatMessageLength` | `256` | Longer chat messages are cut. |
 | **Log Chat To Output** | `bLogChatToOutput` | `true` | Write chat to the output log. |
 | **Log All Commands** | `bLogAllCommands` | `false` | Writes every executed command to the admin log, in addition to the action itself. |
@@ -69,7 +69,7 @@ title: Settings Reference
 
 | Setting | Config key | Default | Description |
 |---|---|---|---|
-| **Restart Mode** | `RestartMode` | `EServerCoreRestartMode::RelaunchProcess` | Relaunch Process, Exit Process or Reload Map. See Change Map, Restart and Shutdown. |
+| **Restart Mode** | `RestartMode` | `EServerAdminCoreRestartMode::RelaunchProcess` | Relaunch Process, Exit Process or Reload Map. See Change Map, Restart and Shutdown. |
 | **Restart Exit Code** | `RestartExitCode` | `0` | Exit code used for restarts in Exit Process and Relaunch Process mode. |
 | **Countdown Warnings** | `CountdownWarnings` | 600, 300, 120, 60, 30, 15, 10, 5, 4, 3, 2, 1 | Seconds left at which a countdown warning is announced. |
 | **Map Aliases** | `MapAliases` | – | Short names for maps, e.g. "arena" -&gt; "/Game/Maps/Arena". |

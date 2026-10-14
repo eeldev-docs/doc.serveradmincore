@@ -5,8 +5,8 @@ title: Plugin Settings
 
 # Plugin Settings
 
-All settings live in **Project Settings → Plugins → Server Core** and are saved to `Config/DefaultGame.ini` under
-`[/Script/ServerCore.ServerCoreSettings]`.
+All settings live in **Project Settings → Plugins → Server Admin Core** and are saved to `Config/DefaultGame.ini` under
+`[/Script/ServerAdminCore.ServerAdminCoreSettings]`.
 
 This page covers the most important settings. Every setting is listed in the
 [Settings Reference](../reference/settings-reference).
@@ -17,26 +17,26 @@ This page covers the most important settings. Every setting is listed in the
 Turns the whole plugin on or off.
 
 ### Active On Listen Server / Active In Standalone
-Server Core is always active on **dedicated servers**. **Active On Listen Server** (on by default) also runs it on
+Server Admin Core is always active on **dedicated servers**. **Active On Listen Server** (on by default) also runs it on
 [listen servers](listen-servers). **Active In Standalone** runs it in standalone games.
 
 ### Listen Server Host Is Owner
 On a [listen server](listen-servers), the hosting player gets every permission.
 
 ### Data Directory
-Where data files are stored. Empty means `<Project>/Saved/ServerCore`. Can be overridden with
-`-ServerCoreDataDir=<path>`. See [Data Files](../reference/data-files).
+Where data files are stored. Empty means `<Project>/Saved/ServerAdminCore`. Can be overridden with
+`-ServerAdminCoreDataDir=<path>`. See [Data Files](../reference/data-files).
 
 ### Storage Class
 The storage backend. The default writes JSON files. See [Custom Storage](../cpp/custom-storage).
 
 ### Auto Add Player Component
-Adds the [ServerCore Player Component](../blueprint/player-component) to every player controller on the server.
+Adds the [ServerAdminCore Player Component](../blueprint/player-component) to every player controller on the server.
 
 ## Permissions
 
 ### Owner Ids
-Player ids with every permission. Extend with `-ServerCoreOwners=Id1,Id2`.
+Player ids with every permission. Extend with `-ServerAdminCoreOwners=Id1,Id2`.
 
 ### Default Groups
 The groups created the **first time** the server starts. After that, groups are stored in `Groups.json` and edited with
@@ -58,7 +58,7 @@ Messages support placeholders: `{Reason}`, `{Duration}`, `{Expires}` and `{By}`.
 Chat messages starting with this prefix are run as commands. Default `/`.
 
 ### Broadcast Chat To Players
-Delivers chat sent through Server Core to every player. Turn it off if you only want the
+Delivers chat sent through Server Admin Core to every player. Turn it off if you only want the
 `On Chat Message` event and deliver chat yourself.
 
 ## Announcements
@@ -78,7 +78,7 @@ Log files, in-memory log size and join/leave logging. See [Admin Logs](../featur
 ## Example configuration
 
 ```ini title="Config/DefaultGame.ini"
-[/Script/ServerCore.ServerCoreSettings]
+[/Script/ServerAdminCore.ServerAdminCoreSettings]
 +OwnerIds=76561198000000000
 CommandPrefix=/
 bWhitelistEnabledByDefault=False

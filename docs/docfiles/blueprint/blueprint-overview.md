@@ -5,33 +5,33 @@ title: Blueprint Overview
 
 # Blueprint Overview
 
-Everything in Server Core is available from Blueprint. There are three things to know about:
+Everything in Server Admin Core is available from Blueprint. There are three things to know about:
 
 | | Where | Used for |
 |---|---|---|
-| **Server Core** subsystem | Server | All admin functions and server events |
-| **ServerCore Player Component** | On every player controller | Client side: chat, commands, announcements, admin panel |
-| **Server Core Blueprint Library** | Anywhere | Helpers: player ids, durations, permissions |
+| **Server Admin Core** subsystem | Server | All admin functions and server events |
+| **ServerAdminCore Player Component** | On every player controller | Client side: chat, commands, announcements, admin panel |
+| **Server Admin Core Blueprint Library** | Anywhere | Helpers: player ids, durations, permissions |
 
 ## Getting the subsystem
 
-Use **Get Server Core** from any Blueprint that has a world context (actors, components, widgets, game mode…).
+Use **Get Server Admin Core** from any Blueprint that has a world context (actors, components, widgets, game mode…).
 
 :::warning
-Admin functions only work on the **server**. On a client, **Is Server Core Active** returns false and admin functions
+Admin functions only work on the **server**. On a client, **Is Server Admin Core Active** returns false and admin functions
 return **Not Server**. Clients talk to the server through the [Player Component](player-component).
 :::
 
 ## Callers
 
-Every admin function takes a **Caller** (`FServerCoreCaller`):
+Every admin function takes a **Caller** (`FServerAdminCoreCaller`):
 
 - **Make Caller** (Player Controller): the action is done by that player. Permissions and group priority are checked.
 - **Make System Caller** (Name): the action is done by the game. No checks. The name shows up in the admin log.
 
 ```text
 Event OnCheatDetected (PlayerController)
- └─ Get Server Core
+ └─ Get Server Admin Core
      └─ Ban Player
           Caller:              Make System Caller ("AntiCheat")
           Player Id:           Get Player Id (PlayerController)
@@ -42,7 +42,7 @@ Event OnCheatDetected (PlayerController)
 
 ## Results
 
-Admin functions return **EServerCoreResult**:
+Admin functions return **EServerAdminCoreResult**:
 
 | Result | Meaning |
 |---|---|
@@ -54,7 +54,7 @@ Admin functions return **EServerCoreResult**:
 | Not Found | E.g. no ban to remove |
 | Invalid Arguments | E.g. empty name |
 | Muted | The sender of a chat message is muted |
-| Not Server | Called on a client, or Server Core is disabled |
+| Not Server | Called on a client, or Server Admin Core is disabled |
 | Failed | Something else went wrong |
 
 Use **Result To String** to get a readable message.
@@ -80,11 +80,11 @@ Details for every function are in the [API Reference](../reference/api-reference
 
 | Function | Description |
 |---|---|
-| **Get Server Core** | The subsystem |
+| **Get Server Admin Core** | The subsystem |
 | **Get Player Id** (Player Controller) | Unique id as a string |
 | **Get Player Id From Player State** | |
 | **Get Player IP Address** (Player Controller) | Server only |
-| **Get Server Core Player Component** (Player Controller) | |
+| **Get Server Admin Core Player Component** (Player Controller) | |
 | **Make System Caller** (Name) | |
 | **Parse Duration** (Text) → Seconds | `"1d12h"` → 129600 |
 | **Format Duration** (Seconds) | 93784 → `"1d 2h 3m"` |

@@ -10,15 +10,15 @@ event, and every request is permission checked on the server.
 
 | Request | Answer event | Permission |
 |---|---|---|
-| **Request Player List** | **On Player List Received** (Players) | `servercore.players` |
-| **Request Player Info** (Player Id) | **On Player Info Received** (Player, Notes) | `servercore.info` (notes need `servercore.notes.view`) |
-| **Request Admin Logs** (Max Entries, Filter Player Id) | **On Admin Logs Received** (Entries) | `servercore.logs` |
+| **Request Player List** | **On Player List Received** (Players) | `serveradmincore.players` |
+| **Request Player Info** (Player Id) | **On Player Info Received** (Player, Notes) | `serveradmincore.info` (notes need `serveradmincore.notes.view`) |
+| **Request Admin Logs** (Max Entries, Filter Player Id) | **On Admin Logs Received** (Entries) | `serveradmincore.logs` |
 | **Request Sanctions** | **On Sanctions Received** (Bans, Mutes) | ban or mute permissions |
 | **Request Commands** | **On Commands Received** (Commands) | – (returns what the player may use) |
 
 Without permission, the player gets a **No Permission** message through **On Server Message**.
 
-IP addresses are removed from the data unless the player has `servercore.info.ip`.
+IP addresses are removed from the data unless the player has `serveradmincore.info.ip`.
 
 ## Example layout
 
@@ -43,7 +43,7 @@ similar names.
 ## Only show the panel to staff
 
 In your player controller, bind **On Permissions Changed** on the component and check
-**Has Permission** (`servercore.players`) or any permission you choose before you create the panel or show its button.
+**Has Permission** (`serveradmincore.players`) or any permission you choose before you create the panel or show its button.
 
 ## Refreshing
 

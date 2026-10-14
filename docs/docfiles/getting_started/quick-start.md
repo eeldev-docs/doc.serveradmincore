@@ -13,12 +13,12 @@ Owners always have every permission and can never be targeted by other players.
 
 1. Start your server, join it and type `/whoami` in chat (or type `players` in the server console window).
 2. Copy your **player id**, e.g. a SteamID64 like `76561198000000000`.
-3. Open **Project Settings → Plugins → Server Core** and add the id to **Owner Ids**.
+3. Open **Project Settings → Plugins → Server Admin Core** and add the id to **Owner Ids**.
 
 You can also pass owners on the command line, which is handy for hosted servers:
 
 ```bash
-MyGameServer.exe -log -ServerCoreOwners=76561198000000000,76561198000000001
+MyGameServer.exe -log -ServerAdminCoreOwners=76561198000000000,76561198000000001
 ```
 
 :::tip
@@ -28,12 +28,12 @@ In the editor you can skip this step. On a listen server the host is treated as 
 
 ## 2. Hook up chat
 
-Server Core adds a **ServerCore Player Component** to every player controller. Send chat through it so mutes are
+Server Admin Core adds a **ServerAdminCore Player Component** to every player controller. Send chat through it so mutes are
 enforced and messages that start with `/` are run as commands:
 
 In Blueprint, from your chat widget:
 
-1. **Get Owning Player** → **Get Server Core Player Component**
+1. **Get Owning Player** → **Get Server Admin Core Player Component**
 2. **Send Chat Message** with the text the player typed
 
 Bind **On Chat Received** on the same component to show incoming messages, and **On Command Output** to show command
@@ -58,7 +58,7 @@ The same commands work typed directly into the dedicated server console window, 
 ban Bob 7d Cheating
 ```
 
-In the editor console, use the `sc` prefix instead: `sc ban Bob 7d Cheating`. See
+In the editor console, use the `sac` prefix instead: `sac ban Bob 7d Cheating`. See
 [The server console](../features/server-commands#the-server-console).
 
 ## 4. Give your staff a group

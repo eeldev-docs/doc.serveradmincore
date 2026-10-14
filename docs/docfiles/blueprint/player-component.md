@@ -5,12 +5,12 @@ title: Player Component
 
 # Player Component
 
-**ServerCore Player Component** (`UServerCorePlayerComponent`) is the bridge between a player and Server Core. The server
+**ServerAdminCore Player Component** (`UServerAdminCorePlayerComponent`) is the bridge between a player and Server Admin Core. The server
 adds it to every player controller automatically (**Auto Add Player Component**). You can also add it to your player
 controller Blueprint yourself, or use your own subclass with **Player Component Class**.
 
-Get it with **Get Server Core Player Component** (Player Controller), or on the client with
-**Get Server Core → Get Local Player Component**.
+Get it with **Get Server Admin Core Player Component** (Player Controller), or on the client with
+**Get Server Admin Core → Get Local Player Component**.
 
 ## Chat
 
@@ -27,7 +27,7 @@ Get it with **Get Server Core Player Component** (Player Controller), or on the 
 
 ### Building a chat box
 
-1. In your chat widget's **On Text Committed**: **Get Owning Player → Get Server Core Player Component → Send Chat
+1. In your chat widget's **On Text Committed**: **Get Owning Player → Get Server Admin Core Player Component → Send Chat
    Message**.
 2. In **Construct**: bind **On Chat Received**, **On Server Message**, **On Announcement Received** and
    **On Command Output**, and add a line to your chat log in each.

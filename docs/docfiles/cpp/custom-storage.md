@@ -5,27 +5,27 @@ title: Custom Storage
 
 # Custom Storage
 
-By default Server Core stores data as JSON files. To keep data in a database, a REST API or anything else, for example to
+By default Server Admin Core stores data as JSON files. To keep data in a database, a REST API or anything else, for example to
 **share bans between several servers**, write your own storage class.
 
-## 1. Subclass UServerCoreStorage
+## 1. Subclass UServerAdminCoreStorage
 
-```cpp title="MyServerCoreStorage.h"
+```cpp title="MyServerAdminCoreStorage.h"
 #pragma once
 
-#include "ServerCoreStorage.h"
-#include "MyServerCoreStorage.generated.h"
+#include "ServerAdminCoreStorage.h"
+#include "MyServerAdminCoreStorage.generated.h"
 
 UCLASS()
-class UMyServerCoreStorage : public UServerCoreStorage
+class UMyServerAdminCoreStorage : public UServerAdminCoreStorage
 {
     GENERATED_BODY()
 
 public:
-    virtual bool LoadDatabase(FServerCoreDatabase& OutDatabase) override;
-    virtual bool SaveDatabase(const FServerCoreDatabase& Database, EServerCoreDataCategory Categories) override;
-    virtual void AppendLogEntry(const FServerCoreLogEntry& Entry) override;
-    virtual void LoadRecentLogEntries(int32 MaxEntries, TArray<FServerCoreLogEntry>& OutEntries) override;
+    virtual bool LoadDatabase(FServerAdminCoreDatabase& OutDatabase) override;
+    virtual bool SaveDatabase(const FServerAdminCoreDatabase& Database, EServerAdminCoreDataCategory Categories) override;
+    virtual void AppendLogEntry(const FServerAdminCoreLogEntry& Entry) override;
+    virtual void LoadRecentLogEntries(int32 MaxEntries, TArray<FServerAdminCoreLogEntry>& OutEntries) override;
 };
 ```
 
@@ -44,7 +44,7 @@ the background, or saves will cause hitches.
 
 ## 2. Select it
 
-**Project Settings → Plugins → Server Core → Storage Class** → `MyServerCoreStorage`.
+**Project Settings → Plugins → Server Admin Core → Storage Class** → `MyServerAdminCoreStorage`.
 
 ## Sharing bans between servers
 
@@ -53,5 +53,5 @@ local. Call `Reload Data` (or the `/reload` command) on your servers after anoth
 
 ## Extending the JSON storage
 
-You can also subclass `UServerCoreJsonStorage` and only override parts of it, for example `AppendLogEntry` to also send
+You can also subclass `UServerAdminCoreJsonStorage` and only override parts of it, for example `AppendLogEntry` to also send
 logs to a web service.
