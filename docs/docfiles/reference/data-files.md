@@ -5,13 +5,13 @@ title: Data Files
 
 # Data Files
 
-With the default JSON storage, data is stored in `<Project>/Saved/ServerCore`. On a packaged server that is
-`<ServerFolder>/<ProjectName>/Saved/ServerCore`.
+With the default JSON storage, data is stored in `<Project>/Saved/ServerAdminCore`. On a packaged server that is
+`<ServerFolder>/<ProjectName>/Saved/ServerAdminCore`.
 
 Change the location with **Data Directory** in the settings, or per server with:
 
 ```bash
-MyGameServer -log -ServerCoreDataDir=/srv/mygame/servercore
+MyGameServer -log -ServerAdminCoreDataDir=/srv/mygame/servercore
 ```
 
 Relative paths are relative to the project folder.
@@ -38,7 +38,7 @@ Every file has the same envelope:
 }
 ```
 
-`Data` is the matching field of `FServerCoreDatabase`, serialized with Unreal's JSON object converter.
+`Data` is the matching field of `FServerAdminCoreDatabase`, serialized with Unreal's JSON object converter.
 
 ## Editing files by hand
 
@@ -52,4 +52,4 @@ You can edit the files while the server is **stopped**. To edit while it is runn
 
 ## Backups
 
-Back up the whole `ServerCore` folder. It is small and plain text.
+Back up the whole `ServerAdminCore` folder. It is small and plain text.

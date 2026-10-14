@@ -12,7 +12,7 @@ Every admin action is logged: who did what, to whom, when and why.
 | Destination | Details |
 |---|---|
 | **Memory** | The last **Max Log Entries In Memory** entries (default 2000), used by `/logs` and **Get Admin Logs** |
-| **Output log** | Category `LogServerCore` |
+| **Output log** | Category `LogServerAdminCore` |
 | **Files** | `<DataDirectory>/Logs/AdminLog-YYYY-MM-DD.jsonl`, one JSON object per line (**Write Log Files**) |
 
 On startup, today's and yesterday's log files are loaded back into memory, so `/logs` survives restarts.
@@ -32,7 +32,7 @@ On startup, today's and yesterday's log files are loaded back into memory, so `/
   2026-10-12 19:20 TempBan by Alice -> Bob: Duration 1d. Reason: Griefing
 ```
 
-Permission: `servercore.logs`
+Permission: `serveradmincore.logs`
 
 ## Logged actions
 
@@ -57,7 +57,7 @@ Bind **On Admin Log** and forward the entry to a webhook with your HTTP plugin o
 
 ## Log file format
 
-Each line is one `FServerCoreLogEntry` serialized as JSON, for example:
+Each line is one `FServerAdminCoreLogEntry` serialized as JSON, for example:
 
 ```json
 {"timestampUtc":"2026.10.12-19.01.33","action":"Kick","actorId":"7656119...","actorName":"Alice","targetId":"7656119...","targetName":"Bob","details":"Spamming"}

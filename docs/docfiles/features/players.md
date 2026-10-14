@@ -5,7 +5,7 @@ title: Player List and Player Info
 
 # Player List and Player Info
 
-Server Core remembers every player that joins: names, play time, join count, group and last IP address.
+Server Admin Core remembers every player that joins: names, play time, join count, group and last IP address.
 
 ## Player list
 
@@ -21,7 +21,7 @@ Server Core remembers every player that joins: names, play time, join count, gro
 ```
 
 Use the `#index` in other commands: `/kick #2`.
-Players with `servercore.info` also see player ids.
+Players with `serveradmincore.info` also see player ids.
 
 ## Player info
 
@@ -40,7 +40,7 @@ MUTED: Bob (76561198000000000) - 16m left - by Alice - Spam
 2 note(s), use "notes Bob" to read them.
 ```
 
-The IP address is only shown to players with `servercore.info.ip` (Admins and Owners by default).
+The IP address is only shown to players with `serveradmincore.info.ip` (Admins and Owners by default).
 
 ## Blueprint
 
@@ -54,7 +54,7 @@ The IP address is only shown to players with `servercore.info.ip` (Admins and Ow
 | **Is Player Online** (Player Id) | |
 | **Get Online Player Count** | |
 
-### FServerCorePlayerInfo
+### FServerAdminCorePlayerInfo
 
 | Field | Description |
 |---|---|
@@ -62,7 +62,7 @@ The IP address is only shown to players with `servercore.info.ip` (Admins and Ow
 | Group Name, Group Priority | |
 | Is Online, Session Index | Index matches `#index` in commands |
 | Ping Ms | |
-| IP Address | Stripped before it is sent to clients without `servercore.info.ip` |
+| IP Address | Stripped before it is sent to clients without `serveradmincore.info.ip` |
 | Joined Utc, Session Seconds | Current session |
 | First Seen Utc, Last Seen Utc | |
 | Total Play Seconds | Including the current session |

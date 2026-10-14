@@ -7,30 +7,30 @@ title: C++ Overview
 
 ## Module dependency
 
-Add `ServerCore` to your module's `Build.cs`:
+Add `ServerAdminCore` to your module's `Build.cs`:
 
 ```csharp title="MyGame.Build.cs"
-PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "ServerCore" });
+PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "ServerAdminCore" });
 ```
 
 ## Headers
 
 | Header | Contains |
 |---|---|
-| `ServerCoreSubsystem.h` | `UServerCoreSubsystem`, `FServerCoreCommandContext`, `FServerCoreNativeCommandHandler` |
-| `ServerCoreTypes.h` | Structs, enums, delegates, `ServerCorePermissions` constants |
-| `ServerCorePlayerComponent.h` | `UServerCorePlayerComponent` |
-| `ServerCoreBlueprintLibrary.h` | `UServerCoreBlueprintLibrary` helpers |
-| `ServerCoreSettings.h` | `UServerCoreSettings` |
-| `ServerCoreStorage.h` | `UServerCoreStorage`, `UServerCoreJsonStorage` |
+| `ServerAdminCoreSubsystem.h` | `UServerAdminCoreSubsystem`, `FServerAdminCoreCommandContext`, `FServerAdminCoreNativeCommandHandler` |
+| `ServerAdminCoreTypes.h` | Structs, enums, delegates, `ServerAdminCorePermissions` constants |
+| `ServerAdminCorePlayerComponent.h` | `UServerAdminCorePlayerComponent` |
+| `ServerAdminCoreBlueprintLibrary.h` | `UServerAdminCoreBlueprintLibrary` helpers |
+| `ServerAdminCoreSettings.h` | `UServerAdminCoreSettings` |
+| `ServerAdminCoreStorage.h` | `UServerAdminCoreStorage`, `UServerAdminCoreJsonStorage` |
 
 ## Getting the subsystem
 
 ```cpp
-#include "ServerCoreSubsystem.h"
+#include "ServerAdminCoreSubsystem.h"
 
-UServerCoreSubsystem* ServerCore = UServerCoreSubsystem::Get(this); // any UObject with a world
-if (ServerCore && ServerCore->IsServerCoreActive())
+UServerAdminCoreSubsystem* ServerAdminCore = UServerAdminCoreSubsystem::Get(this); // any UObject with a world
+if (ServerAdminCore && ServerAdminCore->IsServerAdminCoreActive())
 {
     // server side
 }
@@ -41,14 +41,14 @@ if (ServerCore && ServerCore->IsServerCoreActive())
 ### Ban from game code
 
 ```cpp
-#include "ServerCoreBlueprintLibrary.h"
+#include "ServerAdminCoreBlueprintLibrary.h"
 
 void AMyGameMode::OnCheatDetected(APlayerController* Cheater)
 {
-    UServerCoreSubsystem* ServerCore = UServerCoreSubsystem::Get(this);
-    const FString PlayerId = UServerCoreBlueprintLibrary::GetPlayerId(Cheater);
+    UServerAdminCoreSubsystem* ServerAdminCore = UServerAdminCoreSubsystem::Get(this);
+    const FString PlayerId = UServerAdminCoreBlueprintLibrary::GetPlayerId(Cheater);
 
-    ServerCore->BanPlayer(FServerCoreCaller::System(TEXT("AntiCheat")), PlayerId,
+    ServerAdminCore->BanPlayer(FServerAdminCoreCaller::System(TEXT("AntiCheat")), PlayerId,
         TEXT("Cheat detected"), /*DurationSeconds*/ 30 * 24 * 3600, /*bBanIPAddress*/ true);
 }
 ```
@@ -58,7 +58,7 @@ void AMyGameMode::OnCheatDetected(APlayerController* Cheater)
 ```cpp
 void AMyGameMode::OnVoteKickPassed(const FString& PlayerId)
 {
-    UServerCoreSubsystem::Get(this)->KickPlayer(FServerCoreCaller::System(TEXT("VoteKick")), PlayerId, TEXT("Vote kick"));
+    UServerAdminCoreSubsystem::Get(this)->KickPlayer(FServerAdminCoreCaller::System(TEXT("VoteKick")), PlayerId, TEXT("Vote kick"));
 }
 ```
 
@@ -67,12 +67,12 @@ void AMyGameMode::OnVoteKickPassed(const FString& PlayerId)
 ```cpp
 void AMyPlayerController::ServerAdminKick_Implementation(const FString& TargetId, const FString& Reason)
 {
-    UServerCoreSubsystem* ServerCore = UServerCoreSubsystem::Get(this);
-    const EServerCoreResult Result = ServerCore->KickPlayer(ServerCore->MakeCaller(this), TargetId, Reason);
-    if (Result != EServerCoreResult::Success)
+    UServerAdminCoreSubsystem* ServerAdminCore = UServerAdminCoreSubsystem::Get(this);
+    const EServerAdminCoreResult Result = ServerAdminCore->KickPlayer(ServerAdminCore->MakeCaller(this), TargetId, Reason);
+    if (Result != EServerAdminCoreResult::Success)
     {
-        ServerCore->SendMessageToPlayer(UServerCoreBlueprintLibrary::GetPlayerId(this),
-            UServerCoreBlueprintLibrary::ResultToString(Result));
+        ServerAdminCore->SendMessageToPlayer(UServerAdminCoreBlueprintLibrary::GetPlayerId(this),
+            UServerAdminCoreBlueprintLibrary::ResultToString(Result));
     }
 }
 ```
@@ -80,7 +80,7 @@ void AMyPlayerController::ServerAdminKick_Implementation(const FString& TargetId
 ### Gate a game feature behind a permission
 
 ```cpp
-if (ServerCore->HasPermission(PlayerId, TEXT("mygame.fly")))
+if (ServerAdminCore->HasPermission(PlayerId, TEXT("mygame.fly")))
 {
     EnableFlying(PlayerController);
 }
@@ -91,9 +91,9 @@ if (ServerCore->HasPermission(PlayerId, TEXT("mygame.fly")))
 ```cpp
 void AMyPlayerController::ServerSay_Implementation(const FString& Message)
 {
-    UServerCoreSubsystem* ServerCore = UServerCoreSubsystem::Get(this);
-    FServerCoreSanction Mute;
-    if (ServerCore->IsPlayerMuted(UServerCoreBlueprintLibrary::GetPlayerId(this), Mute))
+    UServerAdminCoreSubsystem* ServerAdminCore = UServerAdminCoreSubsystem::Get(this);
+    FServerAdminCoreSanction Mute;
+    if (ServerAdminCore->IsPlayerMuted(UServerAdminCoreBlueprintLibrary::GetPlayerId(this), Mute))
     {
         return;
     }
@@ -109,13 +109,13 @@ The subsystem's events are dynamic multicast delegates, bind them with `AddDynam
 void AMyGameMode::BeginPlay()
 {
     Super::BeginPlay();
-    if (UServerCoreSubsystem* ServerCore = UServerCoreSubsystem::Get(this))
+    if (UServerAdminCoreSubsystem* ServerAdminCore = UServerAdminCoreSubsystem::Get(this))
     {
-        ServerCore->OnPlayerBanned.AddDynamic(this, &AMyGameMode::HandlePlayerBanned);
+        ServerAdminCore->OnPlayerBanned.AddDynamic(this, &AMyGameMode::HandlePlayerBanned);
     }
 }
 
-void AMyGameMode::HandlePlayerBanned(const FServerCoreSanction& Ban, const FServerCoreCaller& Caller)
+void AMyGameMode::HandlePlayerBanned(const FServerAdminCoreSanction& Ban, const FServerAdminCoreCaller& Caller)
 {
     UE_LOG(LogTemp, Log, TEXT("%s was banned by %s: %s"), *Ban.PlayerName, *Caller.PlayerName, *Ban.Reason);
 }
@@ -124,8 +124,8 @@ void AMyGameMode::HandlePlayerBanned(const FServerCoreSanction& Ban, const FServ
 ### Read the data directly
 
 ```cpp
-const FServerCoreDatabase& Data = ServerCore->GetDatabase();
-for (const TPair<FString, FServerCorePlayerRecord>& Player : Data.Players)
+const FServerAdminCoreDatabase& Data = ServerAdminCore->GetDatabase();
+for (const TPair<FString, FServerAdminCorePlayerRecord>& Player : Data.Players)
 {
     // ...
 }

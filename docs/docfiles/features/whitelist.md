@@ -22,11 +22,11 @@ When the whitelist is on, only whitelisted players can join. Turn it on for priv
 /whitelist off
 ```
 
-Permission: `servercore.whitelist`
+Permission: `serveradmincore.whitelist`
 
 ## Staff bypass
 
-Players with `servercore.whitelist.bypass` can always join. Moderators have it by default, and owners can always join.
+Players with `serveradmincore.whitelist.bypass` can always join. Moderators have it by default, and owners can always join.
 
 ## Default state
 

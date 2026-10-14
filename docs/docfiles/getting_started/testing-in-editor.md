@@ -5,7 +5,7 @@ title: Testing in the Editor
 
 # Testing in the Editor
 
-You don't need to package a server to try Server Core.
+You don't need to package a server to try Server Admin Core.
 
 1. In the **Play** dropdown set **Net Mode** to **Play As Listen Server**.
 2. Set **Number of Players** to 2 or more.
@@ -24,7 +24,7 @@ The other windows are normal players you can kick, ban and mute.
 ## Testing as a dedicated server
 
 Select **Play As Client** in the Net Mode dropdown. The editor starts a dedicated server in the background and connects
-the clients to it. Type server commands in the editor console with `sc`, they run on the server world.
+the clients to it. Type server commands in the editor console with `sac`, they run on the server world.
 
 ### A separate server window
 
@@ -35,4 +35,4 @@ To get a real dedicated server window you can type commands into, uncheck **Run 
 "C:\Program Files\Epic Games\UE_5.8\Engine\Binaries\Win64\UnrealEditor.exe" "C:\Path\To\YourGame.uproject" /Game/Maps/YourMap -server -log
 ```
 
-Type commands straight into that window, without `sc`: `players`, `kick Bob`. Connect a client with `open 127.0.0.1`.
+Type commands straight into that window, without `sac`: `players`, `kick Bob`. Connect a client with `open 127.0.0.1`.

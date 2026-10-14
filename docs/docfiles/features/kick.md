@@ -19,22 +19,22 @@ Removes a player from the server with a reason. The player sees the [Kick Messag
 /kick "Some Name" Please read the rules
 ```
 
-Permission: `servercore.kick`
+Permission: `serveradmincore.kick`
 
 ## Blueprint
 
 **Kick Player** (Caller, Player Id, Reason) → Result
 
-1. **Get Server Core**
+1. **Get Server Admin Core**
 2. **Kick Player** with a caller from **Make Caller** (an admin's player controller) or **Make System Caller** (game logic)
 3. Check the returned **Result**
 
 ## C++
 
 ```cpp
-UServerCoreSubsystem* ServerCore = UServerCoreSubsystem::Get(this);
-const EServerCoreResult Result = ServerCore->KickPlayer(
-    ServerCore->MakeCaller(AdminController), TargetPlayerId, TEXT("Spamming"));
+UServerAdminCoreSubsystem* ServerAdminCore = UServerAdminCoreSubsystem::Get(this);
+const EServerAdminCoreResult Result = ServerAdminCore->KickPlayer(
+    ServerAdminCore->MakeCaller(AdminController), TargetPlayerId, TEXT("Spamming"));
 ```
 
 ## Rules

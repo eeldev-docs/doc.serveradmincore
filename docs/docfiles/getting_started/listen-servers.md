@@ -5,11 +5,11 @@ title: Listen Servers
 
 # Listen Servers
 
-Server Core works on **listen servers** as well as dedicated servers. On a listen server one player hosts the game,
+Server Admin Core works on **listen servers** as well as dedicated servers. On a listen server one player hosts the game,
 and their game is the server. Everything else in this documentation applies to both, with the differences below.
 
 Listen server support is on by default (**Active On Listen Server**). Turn it off in
-**Project Settings → Plugins → Server Core** if you only want Server Core on dedicated servers.
+**Project Settings → Plugins → Server Admin Core** if you only want Server Admin Core on dedicated servers.
 
 ## Differences from a dedicated server
 
@@ -22,10 +22,10 @@ Listen server support is on by default (**Active On Listen Server**). Turn it of
 | Owner | Players in **Owner Ids** | The host is an owner automatically (**Listen Server Host Is Owner**), plus **Owner Ids** |
 | Kicking the host | – | Never possible, the host is the server |
 | Banning or muting the host | – | Not by players while the host is an owner (default) |
-| Console commands | Typed into the server window | The host's in-game console with the `sc` prefix: `sc players` |
+| Console commands | Typed into the server window | The host's in-game console with the `sac` prefix: `sac players` |
 | Restart | **Restart Mode** (relaunch, exit or reload map) | Always reloads the current map |
 | Shutdown | Kicks everyone and exits the server | Kicks every client and closes the host's game |
-| Data files | On the server machine | On the host's machine, in the host's `Saved/ServerCore` |
+| Data files | On the server machine | On the host's machine, in the host's `Saved/ServerAdminCore` |
 
 ## The host
 
@@ -43,5 +43,5 @@ web service.
 
 ## Standalone
 
-In a standalone (single player) game there is no server. Server Core stays off unless you enable
+In a standalone (single player) game there is no server. Server Admin Core stays off unless you enable
 **Active In Standalone**.

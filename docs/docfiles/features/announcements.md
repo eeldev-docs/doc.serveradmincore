@@ -15,9 +15,9 @@ title: Server Announcements
 
 | Command | Description | Permission |
 |---|---|---|
-| `/announce <message>` | Notification to everyone | `servercore.announce` |
-| `/warnall <message>` | Warning to everyone | `servercore.announce` |
-| `/msg <player> <message>` | Private server message to one player | `servercore.announce` |
+| `/announce <message>` | Notification to everyone | `serveradmincore.announce` |
+| `/warnall <message>` | Warning to everyone | `serveradmincore.announce` |
+| `/msg <player> <message>` | Private server message to one player | `serveradmincore.announce` |
 
 In Blueprint: **Announce** (Caller, Message, Type) and **Send Message To Player** (Player Id, Message).
 
@@ -32,12 +32,12 @@ Each announcement carries a type so your UI can display it differently:
 | **Banner** | A banner across the top of the screen |
 | **Warning** | A red, attention-grabbing banner |
 
-Server Core only delivers the message and type. **Your UI decides how it looks**: bind **On Announcement Received** on the
+Server Admin Core only delivers the message and type. **Your UI decides how it looks**: bind **On Announcement Received** on the
 [Player Component](../blueprint/player-component).
 
 ## Scheduled announcements
 
-Add repeating messages in **Project Settings → Server Core → Announcements → Scheduled Announcements**:
+Add repeating messages in **Project Settings → Server Admin Core → Announcements → Scheduled Announcements**:
 
 | Field | Description |
 |---|---|

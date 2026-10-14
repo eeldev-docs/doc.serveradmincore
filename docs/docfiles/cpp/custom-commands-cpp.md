@@ -5,23 +5,23 @@ title: Custom Commands
 
 # Custom Commands (C++)
 
-Register a command with `RegisterNativeCommand`. The handler gets a `FServerCoreCommandContext` and returns an
-`EServerCoreResult`.
+Register a command with `RegisterNativeCommand`. The handler gets a `FServerAdminCoreCommandContext` and returns an
+`EServerAdminCoreResult`.
 
 ```cpp
-#include "ServerCoreSubsystem.h"
+#include "ServerAdminCoreSubsystem.h"
 
 void AMyGameMode::BeginPlay()
 {
     Super::BeginPlay();
 
-    UServerCoreSubsystem* ServerCore = UServerCoreSubsystem::Get(this);
-    if (!ServerCore)
+    UServerAdminCoreSubsystem* ServerAdminCore = UServerAdminCoreSubsystem::Get(this);
+    if (!ServerAdminCore)
     {
         return;
     }
 
-    FServerCoreCommandInfo Info;
+    FServerAdminCoreCommandInfo Info;
     Info.Name = TEXT("heal");
     Info.Aliases = { TEXT("h") };
     Info.Permission = TEXT("mygame.heal");
@@ -29,28 +29,28 @@ void AMyGameMode::BeginPlay()
     Info.Description = TEXT("Heals a player.");
     Info.MinArgs = 1;
 
-    ServerCore->RegisterNativeCommand(Info, [ServerCore](FServerCoreCommandContext& Context)
+    ServerAdminCore->RegisterNativeCommand(Info, [ServerAdminCore](FServerAdminCoreCommandContext& Context)
     {
         FString PlayerId, PlayerName, Error;
-        if (!ServerCore->FindPlayer(Context.Args[0], /*bIncludeOffline*/ false, PlayerId, PlayerName, Error))
+        if (!ServerAdminCore->FindPlayer(Context.Args[0], /*bIncludeOffline*/ false, PlayerId, PlayerName, Error))
         {
             Context.Reply(Error);
-            return EServerCoreResult::PlayerNotFound;
+            return EServerAdminCoreResult::PlayerNotFound;
         }
 
         const float Amount = Context.Args.IsValidIndex(1) ? FCString::Atof(*Context.Args[1]) : 100.f;
-        if (APlayerController* Target = ServerCore->GetPlayerController(PlayerId))
+        if (APlayerController* Target = ServerAdminCore->GetPlayerController(PlayerId))
         {
             // Heal Target->GetPawn() by Amount
         }
 
         Context.Reply(FString::Printf(TEXT("Healed %s by %.0f."), *PlayerName, Amount));
-        return EServerCoreResult::Success;
+        return EServerAdminCoreResult::Success;
     });
 }
 ```
 
-## FServerCoreCommandContext
+## FServerAdminCoreCommandContext
 
 | Member | Description |
 |---|---|
@@ -64,8 +64,8 @@ void AMyGameMode::BeginPlay()
 ## Tips
 
 - The command's `Permission` is checked before your handler runs, and `MinArgs` too. Check extra permissions inside the
-  handler with `ServerCore->CallerHasPermission(Context.Caller, ...)`.
-- Act on players through Server Core functions (`KickPlayer`, `MutePlayer`, …) with `Context.Caller`, so priority rules
+  handler with `ServerAdminCore->CallerHasPermission(Context.Caller, ...)`.
+- Act on players through Server Admin Core functions (`KickPlayer`, `MutePlayer`, …) with `Context.Caller`, so priority rules
   and logging apply.
 - Registering a command with an existing name replaces it. `UnregisterCommand(Name)` removes it.
 - The subsystem lives on the game instance, so commands registered once stay registered across map changes. Registering
