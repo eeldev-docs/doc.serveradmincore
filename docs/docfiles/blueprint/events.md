@@ -25,6 +25,7 @@ Bind these on **Get Server Admin Core**, on the server.
 | **On Command Executed** | Caller, Command Line, Result | |
 | **On Pending Action Changed** | Action | Map change, restart or shutdown scheduled, cancelled or executed |
 | **On Admin Log** | Entry | Every admin log entry |
+| **On Auto Kick Warning** | Player Id, Player Name, Reason, Seconds Left | A player will be kicked for being AFK or for high ping. See [AFK and High Ping Kick](../features/auto-kick) |
 
 :::tip
 Bind the events in your **Game Mode** or **Game Instance**. Since the subsystem lives on the game instance, bindings made

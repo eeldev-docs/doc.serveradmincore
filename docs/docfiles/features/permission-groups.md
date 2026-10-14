@@ -16,7 +16,7 @@ These are created the first time the server starts:
 |---|---|---|---|
 | **Owner** | 1000 | `*` | |
 | **Admin** | 100 | `serveradmincore.*`, `-serveradmincore.group.edit` | Moderator |
-| **Moderator** | 50 | info, kick, tempban, mute, tempmute, unmute, notes.view, notes.add, announce, logs, whitelist.bypass, group.list | Default |
+| **Moderator** | 50 | info, kick, tempban, mute, tempmute, unmute, notes.view, notes.add, announce, logs, whitelist.bypass, afk.bypass, group.list | Default |
 | **Default** | 0 | help, players | |
 
 Players without an assigned group are in **Default**.

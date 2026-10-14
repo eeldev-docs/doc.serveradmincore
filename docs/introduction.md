@@ -25,6 +25,7 @@ New to the plugin? Start with [Installing the plugin](docfiles/getting_started/i
 | Feature | Description |
 |---|---|
 | **[Kick](docfiles/features/kick)** | Kick players with a reason. |
+| **[AFK and High Ping Kick](docfiles/features/auto-kick)** | Kick idle players and players with too high ping, with warnings and staff exemptions. |
 | **[Ban / Temp Ban / Unban](docfiles/features/bans)** | Permanent, timed and IP bans. Works for offline players. Enforced at login. |
 | **[Mute / Temp Mute / Unmute](docfiles/features/mutes)** | Blocks text chat and voice chat. Expires automatically. |
 | **[Whitelist](docfiles/features/whitelist)** | Toggle at runtime, add players before they ever join. |

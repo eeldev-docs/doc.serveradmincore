@@ -31,6 +31,13 @@ Get it with **Get Server Admin Core** / `UServerAdminCoreSubsystem::Get(WorldCon
 | `bool IsPlayerOnline(const FString& PlayerId)` | True if the player is online. |
 | `int32 GetOnlinePlayerCount()` | Number of online players. |
 
+### Auto Kick
+
+| Function | Description |
+|---|---|
+| `void ReportPlayerActivity(const FString& PlayerId)` | Marks a player as active for AFK kick. Pawn movement, chat and commands are detected automatically. Server only. |
+| `float GetPlayerIdleSeconds(const FString& PlayerId)` | Seconds since the player was last active, or -1 when the player is not online. Server only. |
+
 ### Moderation
 
 | Function | Description |
