@@ -17,10 +17,6 @@ const sidebars = {
       id: 'purchase-plugin'
     },
     {
-      type: 'doc',
-      id: 'faq'
-    },
-    {
       type: 'link',
       label: 'eeldev.com',
       href: 'http://eeldev.com/',
