@@ -9,7 +9,9 @@ const productSwitcher = `
 <details class="eel-product-switcher">
   <summary>Server Admin Core</summary>
   <div class="eel-product-switcher__menu">
+    <a class="eel-product-switcher__item" href="https://steamcore-pro.eeldev.com">SteamCore PRO</a>
     <a class="eel-product-switcher__item eel-product-switcher__item--active" href="/">Server Admin Core</a>
+    <a class="eel-product-switcher__item" href="https://hostmigrationcore.eeldev.com">HostMigrationCore</a>
     <a class="eel-product-switcher__item" href="https://eeldev.com" target="_blank" rel="noopener noreferrer">All eelDev plugins ↗</a>
   </div>
 </details>`;
