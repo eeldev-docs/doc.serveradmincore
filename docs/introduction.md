@@ -56,3 +56,7 @@ Server Admin Core is a runtime plugin without third party dependencies.
 | Dedicated server (Windows, Linux) | ✅ Supported |
 | Listen server | ✅ Supported, see [Listen Servers](docfiles/getting_started/listen-servers) |
 | Play In Editor (listen server or dedicated) | ✅ Supported |
+
+## Get the plugin
+
+Server Admin Core is available on [Fab](https://www.fab.com/listings/bb193f2d-058b-42a5-a0f8-e66d570bf2ab).
