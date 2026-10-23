@@ -38,6 +38,15 @@ Get it with **Get Server Admin Core** / `UServerAdminCoreSubsystem::Get(WorldCon
 | `void ReportPlayerActivity(const FString& PlayerId)` | Marks a player as active for AFK kick. Pawn movement, chat and commands are detected automatically. Server only. |
 | `float GetPlayerIdleSeconds(const FString& PlayerId)` | Seconds since the player was last active, or -1 when the player is not online. Server only. |
 
+### Client
+
+| Function | Description |
+|---|---|
+| `UServerAdminCorePlayerComponent* GetLocalPlayerComponent()` | The local player's component, or null. Client only. |
+| `bool WasKicked()` | True if this client was kicked and the reason hasn't been cleared. Survives the return to the menu map. Client only. |
+| `FString GetLastKickReason()` | The kick message this client received. Client only. |
+| `void ClearLastKickReason()` | Clears the stored kick reason. Client only. |
+
 ### Moderation
 
 | Function | Description |

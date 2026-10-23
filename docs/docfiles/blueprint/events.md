@@ -26,6 +26,7 @@ Bind these on **Get Server Admin Core**, on the server.
 | **On Pending Action Changed** | Action | Map change, restart or shutdown scheduled, cancelled or executed |
 | **On Admin Log** | Entry | Every admin log entry |
 | **On Auto Kick Warning** | Player Id, Player Name, Reason, Seconds Left | A player will be kicked for being AFK or for high ping. See [AFK and High Ping Kick](../features/auto-kick) |
+| **On Local Player Kicked** | Reason | **Client side.** The local player is being kicked. Fires just before the disconnect. See [Showing the kick reason to the player](../features/kick#showing-the-kick-reason-to-the-player) |
 
 :::tip
 Bind the events in your **Game Mode** or **Game Instance**. Since the subsystem lives on the game instance, bindings made
@@ -48,3 +49,4 @@ Bind these on the **ServerAdminCore Player Component** of the local player contr
 | **On Admin Logs Received** | Entries |
 | **On Sanctions Received** | Bans, Mutes |
 | **On Commands Received** | Commands |
+| **On Kicked** | Reason |

@@ -53,6 +53,15 @@ The component replicates the player's group and permissions to the **owning clie
 Use these to show an admin button only to staff. The server always checks permissions again, so a modified client can't
 do anything it isn't allowed to.
 
+## Kick reason
+
+| Event | Description |
+|---|---|
+| **On Kicked** (Reason) | The local player is being kicked. Fires just before the disconnect. |
+
+The reason is also stored on the subsystem, so you can show it after the client is back on the menu map. See
+[Showing the kick reason to the player](../features/kick#showing-the-kick-reason-to-the-player).
+
 ## Admin panel requests
 
 See [Building an Admin Panel](admin-panel).
