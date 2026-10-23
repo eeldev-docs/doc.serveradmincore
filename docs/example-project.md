@@ -10,6 +10,18 @@ the editor.
 
 **Download:** [ServerAdminCoreExample.zip](https://eeldev.com/tmp/ServerAdminCoreExample.zip)
 
+## Demo video
+
+The video shows the example project in action, with the dedicated server and a client.
+
+<iframe
+  style={{width: '100%', aspectRatio: '16 / 9', border: 0}}
+  src="https://www.youtube-nocookie.com/embed/YsoA0ZCdFKY"
+  title="Server Admin Core example project demo"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowFullScreen
+></iframe>
+
 ## Getting started
 
 1. **Start the server.** Run `StartServer.bat`. A server log window opens.

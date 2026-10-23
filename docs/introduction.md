@@ -18,6 +18,8 @@ Everything is available from **Blueprint and C++**.
 :::tip
 New to the plugin? Start with [Installing the plugin](docfiles/getting_started/installing-plugin) and the
 [Quick Start](docfiles/getting_started/quick-start). You can be kicking and banning in PIE within five minutes.
+
+Want to see it first? Watch the [demo video](https://www.youtube.com/watch?v=YsoA0ZCdFKY) or try the [Example Project](example-project).
 :::
 
 ## Features
