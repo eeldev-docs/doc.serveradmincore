@@ -16,7 +16,7 @@ The video shows the example project in action, with the dedicated server and a c
 
 <iframe
   style={{width: '100%', aspectRatio: '16 / 9', border: 0}}
-  src="https://www.youtube-nocookie.com/embed/YsoA0ZCdFKY"
+  src="https://www.youtube-nocookie.com/embed/1df_dJjGw1E"
   title="Server Admin Core example project demo"
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
   allowFullScreen
