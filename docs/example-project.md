@@ -8,7 +8,7 @@ title: Example Project
 A ready-to-run example with a packaged dedicated server and a client, so you can try Server Admin Core without opening
 the editor.
 
-**Download:** [ServerAdminCoreExample.zip](https://eeldev.com/tmp/ServerAdminCoreExample.zip)
+**Download:** [ServerAdminCoreExample.zip](https://drive.google.com/drive/folders/1fvyc-3mabd9MW3HQNk6WBN7nT8sConh-?usp=sharing)
 
 ## Demo video
 
