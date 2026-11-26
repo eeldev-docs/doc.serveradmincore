@@ -37,7 +37,20 @@ const config = {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
         },
-        blog: false,
+        blog: {
+          path: 'changelog',
+          routeBasePath: 'changelog',
+          blogTitle: 'Server Admin Core Changelog',
+          blogDescription: 'Release notes for Server Admin Core',
+          blogSidebarTitle: 'Recent releases',
+          showReadingTime: false,
+          onUntruncatedBlogPosts: 'ignore',
+          feedOptions: {
+            type: 'rss',
+            title: 'Server Admin Core Changelog',
+            description: 'Release notes for Server Admin Core',
+          },
+        },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
