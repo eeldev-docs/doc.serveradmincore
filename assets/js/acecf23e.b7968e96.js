@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdoc_serveradmincore=self.webpackChunkdoc_serveradmincore||[]).push([[1903],{1912:e=>{e.exports=JSON.parse('{"blogBasePath":"/changelog","blogTitle":"Server Admin Core Changelog","authorsListPath":"/changelog/authors"}')}}]);
