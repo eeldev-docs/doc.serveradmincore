@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdoc_serveradmincore=self.webpackChunkdoc_serveradmincore||[]).push([[5832],{9990:e=>{e.exports=JSON.parse('{"metadata":{"permalink":"/changelog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Release notes for Server Admin Core","blogTitle":"Server Admin Core Changelog"}}')}}]);

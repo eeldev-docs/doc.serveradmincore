@@ -4,10 +4,44 @@
         <title>Server Admin Core Changelog</title>
         <link>https://serveradmincore.eeldev.com/changelog</link>
         <description>Release notes for Server Admin Core</description>
-        <lastBuildDate>Sat, 24 Oct 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 27 Nov 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Server Admin Core 1.1.0]]></title>
+            <link>https://serveradmincore.eeldev.com/changelog/1-1-0</link>
+            <guid>https://serveradmincore.eeldev.com/changelog/1-1-0</guid>
+            <pubDate>Fri, 27 Nov 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[GENERAL]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="general"><strong>GENERAL</strong><a href="https://serveradmincore.eeldev.com/changelog/1-1-0#general" class="hash-link" aria-label="Direct link to general" title="Direct link to general" translate="no">​</a></h2>
+<ul>
+<li class="">New module <strong>ServerAdminCoreRemote</strong> for <a class="" href="https://serveradmincore.eeldev.com/docfiles/remote/overview">remote control</a> of dedicated servers</li>
+<li class="">IP addresses are removed from all REST and WebSocket output unless the token's group has <code>serveradmincore.info.ip</code></li>
+<li class="">Free <a class="" href="https://serveradmincore.eeldev.com/docfiles/remote/companion-tools">companion tools</a>: watchdog, Discord bot and web panel, downloaded separately</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="added"><strong>ADDED</strong><a href="https://serveradmincore.eeldev.com/changelog/1-1-0#added" class="hash-link" aria-label="Direct link to added" title="Direct link to added" translate="no">​</a></h2>
+<ul>
+<li class="">Source <strong>RCON</strong> listener, compatible with mcrcon and other Source RCON clients</li>
+<li class=""><strong>REST API</strong> with health, status, players, bans, logs and command endpoints</li>
+<li class=""><strong>WebSocket event stream</strong> with token authentication and per-connection permissions</li>
+<li class=""><strong>API tokens</strong> with the <code>token create</code>, <code>token list</code> and <code>token revoke</code> commands</li>
+<li class=""><strong>Managed mode</strong> for restarts under the watchdog, with a restart flag file</li>
+<li class="">Remote caller and thread-safe command queue, so remote commands run on the game thread with the caller's group permissions</li>
+<li class=""><strong>Require Verified Ids</strong> setting and <strong>Mark Player Id Verified</strong> function, so owner ids only count after your game has authenticated the player</li>
+<li class=""><strong>Rpc Burst</strong>, <strong>Rpc Refill Per Second</strong>, <strong>Max List Rpc Items</strong> and <strong>Players Save Interval Seconds</strong> settings</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="fixed"><strong>FIXED</strong><a href="https://serveradmincore.eeldev.com/changelog/1-1-0#fixed" class="hash-link" aria-label="Direct link to fixed" title="Direct link to fixed" translate="no">​</a></h2>
+<ul>
+<li class="">Temporary <code>Session_N</code> ids are rejected for ban, whitelist and setgroup</li>
+<li class="">Sanction duration is capped</li>
+<li class="">Data that failed to load is no longer overwritten on save</li>
+<li class="">The hosting player on a listen server is never rejected by the player checks</li>
+<li class="">Admin client requests are rate limited and large lists are capped, so a client can no longer flood the server</li>
+<li class=""><code>Players.json</code> is saved at most every 30 seconds by default, which avoids hitches on servers with many known players</li>
+<li class="">Creating a token for your own group works, and refusals explain why</li>
+</ul>]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[Server Admin Core 1.0.1]]></title>
             <link>https://serveradmincore.eeldev.com/changelog/1-0-1</link>

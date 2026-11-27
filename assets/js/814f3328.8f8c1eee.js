@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdoc_serveradmincore=self.webpackChunkdoc_serveradmincore||[]).push([[7472],{5513:e=>{e.exports=JSON.parse('{"title":"Recent releases","items":[{"title":"Server Admin Core 1.0.1","permalink":"/changelog/1-0-1","unlisted":false,"date":"2026-10-24T00:00:00.000Z"}]}')}}]);
