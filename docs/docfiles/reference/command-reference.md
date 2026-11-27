@@ -94,4 +94,4 @@ See [Targeting players](../features/server-commands#targeting-players) for what 
 | `logs` | `history` | `[count] [player]` | `serveradmincore.logs` | Recent admin logs (default 20, max 200) |
 | `reload` | | | `serveradmincore.reload` | Reload data from storage |
 | `save` | | | `serveradmincore.reload` | Save data now |
-| `token` | | `<create\|list\|revoke> ...` | `serveradmincore.token` | Manage [API tokens](remote/tokens) for the REST API and WebSocket events |
+| `token` | | `<create\|list\|revoke> ...` | `serveradmincore.token` | Manage [API tokens](../remote/tokens) for the REST API and WebSocket events |
