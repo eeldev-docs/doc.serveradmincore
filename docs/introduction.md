@@ -38,6 +38,7 @@ Want to see it first? Watch the [demo video](https://www.youtube.com/watch?v=1df
 | **[Player List and Player Info](docfiles/features/players)** | Play time, known names, ping, IP, ban and mute state. |
 | **[Player Notes](docfiles/features/player-notes)** | Private staff notes per player. |
 | **[Admin Logs](docfiles/features/admin-logs)** | Every action logged to memory, the output log and daily files. |
+| **[Remote Control](docfiles/remote/overview)** | RCON, REST API, WebSocket events and API tokens, plus a free watchdog, Discord bot and web panel. |
 | **[Blueprint](docfiles/blueprint/blueprint-overview) + [C++](docfiles/cpp/cpp-overview)** | Full API, events, an in-game admin panel bridge and pluggable storage. |
 
 ## Supported engine versions
@@ -51,7 +52,7 @@ Want to see it first? Watch the [demo video](https://www.youtube.com/watch?v=1df
 
 ## Supported server types
 
-Server Admin Core is a runtime plugin without third party dependencies.
+Server Admin Core is a runtime plugin without third party dependencies. The optional [companion tools](docfiles/remote/companion-tools) are separate downloads.
 
 | Server type | Status |
 |---|---|

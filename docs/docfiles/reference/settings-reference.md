@@ -31,6 +31,7 @@ title: Settings Reference
 | **Default Group Name** | `DefaultGroupName` | `"Default"` | Group used for players without an assigned group. |
 | **Default Groups** | `DefaultGroups` | Owner, Admin, Moderator, Default | Groups created the first time the server runs (when no Groups.json exists). Edit groups at runtime with commands or Blueprint afterwards. |
 | **Enforce Immunity** | `bEnforceImmunity` | `true` | Players can only act on players with a lower group priority. |
+| **Require Verified Ids** | `bRequireVerifiedIds` | `false` | Owner Ids and command line owners only get owner rights after your game has confirmed the id is authenticated by calling Mark Player Id Verified. Enable this unless your game authenticates players with Steam, EOS or similar. |
 
 ## Moderation
 
@@ -99,6 +100,15 @@ See [AFK and High Ping Kick](../features/auto-kick).
 | **Cancelled Message** | `CancelledMessage` | `"The scheduled server action was cancelled."` | Announced when a scheduled action is cancelled. |
 | **Shutdown Kick Message** | `ShutdownKickMessage` | `"The server is shutting down. {Reason}"` | Kick message when the server shuts down. Supports `{Reason}`. |
 | **Restart Kick Message** | `RestartKickMessage` | `"The server is restarting. {Reason}"` | Kick message when the server restarts. Supports `{Reason}`. |
+
+## Network and Storage
+
+| Setting | Config key | Default | Description |
+|---|---|---|---|
+| **Rpc Burst** | `RpcBurst` | `12` | Points a player can spend at once on requests to the server before being limited. |
+| **Rpc Refill Per Second** | `RpcRefillPerSecond` | `3.0` | Points a player regains per second. A chat message costs 1, so the default allows about 3 chat messages per second over time. |
+| **Max List Rpc Items** | `MaxListRpcItems` | `150` | Maximum number of players, bans or mutes sent to an admin client in one request. The newest entries are sent and a message says how many were left out. |
+| **Players Save Interval Seconds** | `PlayersSaveIntervalSeconds` | `30` | Minimum seconds between saves of `Players.json`. Bans, mutes, groups, whitelist and notes are always saved immediately, and everything is saved on shutdown. 0 saves immediately. |
 
 ## Logging
 
